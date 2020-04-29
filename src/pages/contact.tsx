@@ -1,11 +1,12 @@
 import React from "react";
+import { PageProps } from "gatsby";
 import styled from "../theme";
 import { Layout } from "../components/layout";
 import { SEO } from "../components/seo";
 
-const ContactPage = () => (
+const ContactPage: React.FC<PageProps> = ({ location }) => (
   <Layout title="Contact Us">
-    <SEO title="Contact Us" />
+    <SEO title="Contact Us" pathname={location.pathname} />
     <Form
       name="contact"
       data-netlify="true"

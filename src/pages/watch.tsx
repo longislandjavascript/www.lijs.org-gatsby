@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+import { PageProps } from "gatsby";
 import styled from "../theme";
-import { useTheme } from "emotion-theming";
 import ReactPlayer from "react-player";
 import { Layout } from "../components/layout";
 import { Show } from "../components/show";
@@ -8,8 +8,7 @@ import { SEO } from "../components/seo";
 import { useWindowSize } from "react-hooks-window-size";
 import { AtomSpinner } from "react-epic-spinners";
 
-const WatchPage = () => {
-  const { isSmall } = useTheme();
+const WatchPage: React.FC<PageProps> = ({ location }) => {
   const [isReady, setIsReady] = useState(false);
   function markAsReady() {
     setIsReady(true);
@@ -17,10 +16,10 @@ const WatchPage = () => {
   const { height } = useWindowSize();
   return (
     <Layout title="Watch Now" fullWidth={true}>
-      <SEO title="Watch Now" />
+      <SEO title="Watch Now" pathname={location.pathname} />
       <Show when={!isReady}>
         <SpinnerOverlay>
-          <AtomSpinner color="hsl(202, 100%, 20%)" size={isSmall ? 300 : 500} />
+          <AtomSpinner color="hsl(202, 100%, 20%)" size={200} />
         </SpinnerOverlay>
       </Show>
 
@@ -38,7 +37,7 @@ const WatchPage = () => {
 const SpinnerOverlay = styled.div`
   height: 90vh;
   display: flex;
-  align-items: center;
+  padding-top: 100px;
   justify-content: center;
 `;
 

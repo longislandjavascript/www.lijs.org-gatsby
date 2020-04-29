@@ -16,11 +16,12 @@ import { DDDLogo } from "../components/ddd-logo";
 export const links = [
   ["Next Event", "/", FaCalendarDay],
   ["Watch Now", "/watch", FaDesktop],
+  ["Past Events", "/past-events", BsClockHistory],
   ["About Us", "/about", FaUsers],
   ["Contact Us", "/contact", FaRegEnvelope],
   ["FAQ", "/faq", FaQuestionCircle],
   ["Code of Conduct", "/code-of-conduct", FaScroll],
-  ["Past Events", "/past-events", BsClockHistory],
+
   ["Meetup", "https://www.meetup.com/long-island-javascript-group/", FaMeetup],
   [
     "Slack",

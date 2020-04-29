@@ -3,9 +3,25 @@ module.exports = {
     title: `Long Island JavaScript Meetup`,
     description: `Welcome to Long Island JavaScript Meetup! We meet on the last Wednesday of each month and discuss all things JavaScript.`,
     author: `@gojutin`,
+    siteUrl: "https://www.lijs.org",
+    keywords: [
+      "javascript",
+      "meetup",
+      "group",
+      "typescript",
+      "react",
+      "reactjs",
+      "svelte",
+      "vue",
+      "node",
+      "nodejs",
+      "deno",
+      "angular",
+    ],
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    // `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-next-seo`,
     `gatsby-plugin-typescript`,
 
     {

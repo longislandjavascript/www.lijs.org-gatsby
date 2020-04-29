@@ -1,5 +1,5 @@
 import React from "react";
-import { Helmet } from "react-helmet";
+import { GatsbySeo } from "gatsby-plugin-next-seo";
 import { useStaticQuery, graphql } from "gatsby";
 
 type Props = {
@@ -7,9 +7,10 @@ type Props = {
   description?: string;
   lang?: string;
   meta?: any[];
+  pathname: string;
 };
 
-export const SEO = ({ description, lang = "en", meta = [], title }: Props) => {
+export const SEO = ({ description, pathname, meta = [], title }: Props) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -18,6 +19,8 @@ export const SEO = ({ description, lang = "en", meta = [], title }: Props) => {
             title
             description
             author
+            keywords
+            siteUrl
           }
         }
       }
@@ -25,49 +28,34 @@ export const SEO = ({ description, lang = "en", meta = [], title }: Props) => {
   );
 
   const metaDescription = description || site.siteMetadata.description;
+  const metaKeywords = site.siteMetadata.keywords.join(",");
 
   return (
     // @ts-ignore
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
+    <GatsbySeo
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
+      canonical={`${site.siteMetadata.siteUrl}${pathname}`}
+      openGraph={{
+        url: site.siteMetadata.siteUrl,
+        title,
+        description: metaDescription,
+        type: "website",
+        images: [
+          {
+            url:
+              "https://res.cloudinary.com/gojutin/image/upload/v1588191526/lijs.org/lijs-logo.png",
+            width: 700,
+            height: 700,
+            alt: "Long Island JavaScript Meetup",
+          },
+        ],
+      }}
+      twitter={{
+        // handle: "@handle",
+        // site: "@site",
+        cardType: "summary_large_image",
+      }}
     />
   );
 };

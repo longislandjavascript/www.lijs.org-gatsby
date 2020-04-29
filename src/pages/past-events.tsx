@@ -1,22 +1,22 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, PageProps } from "gatsby";
 import { Layout } from "../components/layout";
 import { SEO } from "../components/seo";
 import { Event } from "../components/event";
 import { MeetupEvent } from "../types";
 
-type Props = {
+interface Props extends PageProps {
   data: {
     allMeetupEvent: {
       nodes: MeetupEvent[];
     };
   };
-};
+}
 
-const PastEventsPage: React.FC<Props> = ({ data }) => {
+const PastEventsPage: React.FC<Props> = ({ data, location }) => {
   return (
     <Layout title="Past Events">
-      <SEO title="Past Events" />
+      <SEO title="Past Events" pathname={location.pathname} />
       {data.allMeetupEvent.nodes.map(event => {
         return <Event key={event.time} data={event} />;
       })}
