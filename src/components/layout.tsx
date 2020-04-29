@@ -18,7 +18,7 @@ export const Layout: React.FC<Props> = ({ children, title, fullWidth }) => {
   const { width } = useWindowSize();
   const isSmall = useMemo(() => width < 700, [width]);
 
-  const [isSidebarOpen, setIsSidebarOpen] = useState(!isSmall);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   function toggleSidebar() {
     setIsSidebarOpen(o => !o);
