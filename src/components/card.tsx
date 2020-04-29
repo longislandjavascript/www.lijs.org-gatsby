@@ -16,11 +16,17 @@ const StyledCard = styled.div`
   margin-bottom: 20px;
 `;
 
+const TitleWrapper = styled.div`
+  text-align: ${p => (p.theme.isSmall ? "center" : "left")};
+`;
+
 export const Card: React.FC<Props> = ({ children, title }) => {
   return (
     <StyledCard>
       <Show when={!!title}>
-        <CrookedTitle as="h2">{title}</CrookedTitle>
+        <TitleWrapper>
+          <CrookedTitle as="h2">{title}</CrookedTitle>
+        </TitleWrapper>
       </Show>
 
       {children}
