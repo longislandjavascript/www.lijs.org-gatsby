@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Long Island JavaScript Meetup`,
-    description: `Welcome to LIJS! We meet on `,
-    author: `@gatsbyjs`,
+    description: `Welcome to LIJS! We meet on the last Wednesday of each month and discuss all things JavaScript.`,
+    author: `@gojutin`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
