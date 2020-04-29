@@ -12,8 +12,9 @@ const SidebarLink = styled(Link)`
   align-items: center;
   border-radius: 0 3em 3em 0;
   margin: 0;
-  padding: 10px 20px;
+  padding: 8px 20px;
   font-weight: 600;
+  font-size: 0.9rem;
 
   span {
     padding-left: 10px;
@@ -32,7 +33,7 @@ const StyledAside = styled.aside<{ isOpen: boolean }>`
   left: ${p => (p.isOpen ? 0 : "-100%")};
   transition: left 300ms ease-in-out;
   z-index: 9999;
-
+  box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.2);
   ul {
     margin-top: 10px;
   }

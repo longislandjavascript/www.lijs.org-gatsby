@@ -16,20 +16,14 @@ type Props = {
 };
 
 export const Layout: React.FC<Props> = ({ children, title, fullWidth }) => {
-  const { width } = useWindowSize(0, 0);
+  const { width } = useWindowSize(1280, 1000);
   const isSmall = useMemo(() => width < 700, [width]);
 
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(!isSmall);
 
   function toggleSidebar() {
     setIsSidebarOpen(o => !o);
   }
-
-  useEffect(() => {
-    setTimeout(() => {
-      setIsSidebarOpen(!isSmall);
-    }, 500);
-  }, []);
 
   useEffect(
     function toggleSidebarOnWidthChange() {

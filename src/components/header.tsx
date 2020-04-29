@@ -4,12 +4,17 @@ import { LIJSLogo } from "./lijs-logo";
 import { RiMenu4Line } from "react-icons/ri";
 
 const StyledHeader = styled.header`
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
   background: ${p => p.theme.colors.blueDark};
   height: ${p => p.theme.headerHeight}px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-right: 10px;
+  z-index: 9999;
 `;
 
 type Props = {
