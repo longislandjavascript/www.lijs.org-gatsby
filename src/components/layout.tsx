@@ -16,7 +16,7 @@ type Props = {
 };
 
 export const Layout: React.FC<Props> = ({ children, title, fullWidth }) => {
-  const { width } = useWindowSize(1280, 1000);
+  const { width } = useWindowSize(1280, 1080);
   const isSmall = useMemo(() => width < 700, [width]);
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(!isSmall);
@@ -39,13 +39,13 @@ export const Layout: React.FC<Props> = ({ children, title, fullWidth }) => {
   });
 
   return (
-    <ThemeProvider theme={{ ...theme, isSmall }}>
+    <ThemeProvider theme={{ ...theme, isSmall, isSidebarOpen }}>
       <Show when={isSmall}>
         <Header onRequestOpenSidebar={toggleSidebar} />
       </Show>
 
-      <Sidebar isOpen={isSidebarOpen} forwardRef={ref} />
-      <Main isSidebarOpen={isSidebarOpen} fullWidth={fullWidth}>
+      <Sidebar forwardRef={ref} />
+      <Main fullWidth={fullWidth}>
         <CrookedTitle>{title}</CrookedTitle>
         <div style={{ marginTop: "25px" }}>{children}</div>
       </Main>

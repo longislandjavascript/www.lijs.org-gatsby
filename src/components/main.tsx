@@ -1,12 +1,14 @@
 import React from "react";
 import styled from "../theme";
 
-const StyledMain = styled.main<{ isSidebarOpen: boolean }>`
+const StyledMain = styled.main`
   background-color: ${p => p.theme.colors.blueDarkest};
   position: absolute;
   top: ${p => (p.theme.isSmall ? p.theme.headerHeight + "px" : 0)};
   left: ${p =>
-    p.isSidebarOpen && !p.theme.isSmall ? p.theme.sidebarWidth + "px" : 0};
+    p.theme.isSidebarOpen && !p.theme.isSmall
+      ? p.theme.sidebarWidth + "px"
+      : 0};
   right: 0;
   transition: left 300ms, top 300ms;
   min-height: 100vh;
@@ -19,12 +21,11 @@ const Container = styled.div<{ fullWidth: boolean }>`
 
 type Props = {
   children: React.ReactNode;
-  isSidebarOpen: boolean;
   fullWidth: boolean;
 };
-export const Main = ({ children, isSidebarOpen, fullWidth }: Props) => {
+export const Main = ({ children, fullWidth }: Props) => {
   return (
-    <StyledMain isSidebarOpen={isSidebarOpen}>
+    <StyledMain>
       <Container fullWidth={fullWidth}>{children}</Container>
     </StyledMain>
   );

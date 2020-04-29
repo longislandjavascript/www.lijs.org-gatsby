@@ -13,6 +13,7 @@ export const theme = {
   isSmall: false,
   sidebarWidth: 300,
   headerHeight: 75,
+  isSidebarOpen: false,
 } as const;
 
 export default styled as CreateStyled<typeof theme>;

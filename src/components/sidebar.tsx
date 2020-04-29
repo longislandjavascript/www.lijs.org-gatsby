@@ -22,7 +22,7 @@ const SidebarLink = styled(Link)`
   }
 `;
 
-const StyledAside = styled.aside<{ isOpen: boolean }>`
+const StyledAside = styled.aside`
   width: ${p => p.theme.sidebarWidth}px;
   overflow: hidden;
   padding: 10px;
@@ -30,7 +30,10 @@ const StyledAside = styled.aside<{ isOpen: boolean }>`
   position: fixed;
   top: ${p => (p.theme.isSmall ? p.theme.headerHeight + "px" : "0px")};
   bottom: 0;
-  left: ${p => (p.isOpen ? 0 : "-100%")};
+  left: ${p => {
+    console.log("THEME", p.theme);
+    return p.theme.isSidebarOpen ? 0 : "-100%";
+  }};
   transition: left 300ms ease-in-out;
   z-index: 9999;
   box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.2);
@@ -49,15 +52,14 @@ const StyledAside = styled.aside<{ isOpen: boolean }>`
 `;
 
 export type SidebarProps = {
-  isOpen: boolean;
   forwardRef: any;
 };
 
-export const Sidebar: React.FC<SidebarProps> = ({ isOpen, forwardRef }) => {
+export const Sidebar: React.FC<SidebarProps> = ({ forwardRef }) => {
   const { isSmall } = useTheme();
 
   return (
-    <StyledAside isOpen={isOpen} ref={forwardRef}>
+    <StyledAside ref={forwardRef}>
       <ul>
         <Show when={!isSmall}>
           <li>
