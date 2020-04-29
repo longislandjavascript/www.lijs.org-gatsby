@@ -30,10 +30,7 @@ const StyledAside = styled.aside`
   position: fixed;
   top: ${p => (p.theme.isSmall ? p.theme.headerHeight + "px" : "0px")};
   bottom: 0;
-  left: ${p => {
-    console.log("THEME", p.theme);
-    return p.theme.isSidebarOpen ? 0 : "-100%";
-  }};
+  left: ${p => (p.theme.isSidebarOpen ? 0 : "-100%")};
   transition: left 300ms ease-in-out;
   z-index: 9999;
   box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.2);
