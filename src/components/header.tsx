@@ -6,7 +6,6 @@ import { RiMenu4Line } from "react-icons/ri";
 const StyledHeader = styled.header`
   background: ${p => p.theme.colors.blueDark};
   height: ${p => p.theme.headerHeight}px;
-  display: ${p => (p.theme.isSmall ? "flex" : "none")};
   align-items: center;
   justify-content: space-between;
   padding-right: 10px;

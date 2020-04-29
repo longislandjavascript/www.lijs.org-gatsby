@@ -4,6 +4,7 @@ import { theme } from "../theme";
 import { Header } from "./header";
 import { Sidebar } from "./sidebar";
 import { Main } from "./main";
+import { Show } from "./show";
 import { CrookedTitle } from "./crooked-title";
 import { useClickOutside } from "../hooks/use-click-outside";
 import { useWindowSize } from "react-hooks-window-size";
@@ -15,7 +16,7 @@ type Props = {
 };
 
 export const Layout: React.FC<Props> = ({ children, title, fullWidth }) => {
-  const { width } = useWindowSize();
+  const { width } = useWindowSize(0, 0);
   const isSmall = useMemo(() => width < 700, [width]);
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -45,7 +46,10 @@ export const Layout: React.FC<Props> = ({ children, title, fullWidth }) => {
 
   return (
     <ThemeProvider theme={{ ...theme, isSmall }}>
-      <Header onRequestOpenSidebar={toggleSidebar} />
+      <Show when={isSmall}>
+        <Header onRequestOpenSidebar={toggleSidebar} />
+      </Show>
+
       <Sidebar isOpen={isSidebarOpen} forwardRef={ref} />
       <Main isSidebarOpen={isSidebarOpen} fullWidth={fullWidth}>
         <CrookedTitle>{title}</CrookedTitle>
