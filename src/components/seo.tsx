@@ -36,6 +36,7 @@ export const SEO = ({ description, pathname, meta = [], title }: Props) => {
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       canonical={`${site.siteMetadata.siteUrl}${pathname}`}
+      description={metaDescription}
       openGraph={{
         url: site.siteMetadata.siteUrl,
         title,
