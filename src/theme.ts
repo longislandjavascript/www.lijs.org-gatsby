@@ -14,6 +14,7 @@ export const theme = {
   sidebarWidth: 300,
   headerHeight: 75,
   isSidebarOpen: false,
+  borderRadius: ".8rem",
 } as const;
 
 export default styled as CreateStyled<typeof theme>;

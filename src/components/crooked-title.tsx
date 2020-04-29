@@ -20,7 +20,7 @@ export const CrookedTitle: React.FC<Props> = ({ as: As = "h1", children }) => {
         text-transform: uppercase;
         font-family: Helvetica, sans-serif;
         font-weight: 700;
-        box-shadow: 1px 1px 1px ${theme.colors.textLight};
+        box-shadow: 1px 1px 1px ${theme.colors.textDark};
       `}
     >
       {children}

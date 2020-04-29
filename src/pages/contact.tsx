@@ -59,7 +59,7 @@ const Form = styled.form`
   select,
   textarea,
   button {
-    border-radius: 8px;
+    border-radius: 0.5rem;
     background: ${p => p.theme.colors.blueDark};
     padding: 10px 15px;
     border: 2px solid transparent;

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Long Island JavaScript Meetup`,
-    description: `Welcome to LIJS! We meet on the last Wednesday of each month and discuss all things JavaScript.`,
+    description: `Welcome to Long Island JavaScript Meetup! We meet on the last Wednesday of each month and discuss all things JavaScript.`,
     author: `@gojutin`,
   },
   plugins: [

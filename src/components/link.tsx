@@ -5,7 +5,7 @@ import { Link as GatsbyLink } from "gatsby";
 const baseStyles = theme => css`
   display: block;
   padding: 20px;
-  border-radius: 2em;
+  border-radius: ${theme.borderRadius};
   text-decoration: none;
   outline: none;
   transition: background-color 300ms;

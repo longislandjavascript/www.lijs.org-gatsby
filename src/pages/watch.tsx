@@ -1,11 +1,15 @@
 import React, { useState } from "react";
+import styled from "../theme";
+import { useTheme } from "emotion-theming";
 import ReactPlayer from "react-player";
 import { Layout } from "../components/layout";
 import { Show } from "../components/show";
 import { SEO } from "../components/seo";
 import { useWindowSize } from "react-hooks-window-size";
+import { AtomSpinner } from "react-epic-spinners";
 
 const WatchPage = () => {
+  const { isSmall } = useTheme();
   const [isReady, setIsReady] = useState(false);
   function markAsReady() {
     setIsReady(true);
@@ -14,9 +18,10 @@ const WatchPage = () => {
   return (
     <Layout title="Watch Now" fullWidth={true}>
       <SEO title="Watch Now" />
-      {/* TODO: Add spinner or something */}
       <Show when={!isReady}>
-        <p>Loading...</p>
+        <SpinnerOverlay>
+          <AtomSpinner color="hsl(202, 100%, 20%)" size={isSmall ? 300 : 500} />
+        </SpinnerOverlay>
       </Show>
 
       <ReactPlayer
@@ -29,5 +34,12 @@ const WatchPage = () => {
     </Layout>
   );
 };
+
+const SpinnerOverlay = styled.div`
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 export default WatchPage;

@@ -35,15 +35,17 @@ export const Organizers = () => {
           const colors = ["logoPurple", "logoYellow", "logoBlue"];
           const Image = organizer.image;
           return (
-            <Link key={organizer.name} to={organizer.link}>
-              <OrganizerWrapper>
-                <Avatar color={colors[index]}>
-                  <Image />
-                </Avatar>
+            <li key={organizer.name}>
+              <Link to={organizer.link}>
+                <OrganizerWrapper>
+                  <Avatar color={colors[index]} aria-hidden={true}>
+                    <Image />
+                  </Avatar>
 
-                <p>{organizer.name}</p>
-              </OrganizerWrapper>
-            </Link>
+                  <p>{organizer.name}</p>
+                </OrganizerWrapper>
+              </Link>
+            </li>
           );
         })}
       </Wrapper>
@@ -51,7 +53,7 @@ export const Organizers = () => {
   );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.ul`
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;

@@ -25,11 +25,13 @@ export const Sponsors = () => {
         {sponsorsData.map(sponsor => {
           const Image = sponsor.image;
           return (
-            <Link key={sponsor.name} href={sponsor.link}>
-              <SponsorWrapper>
-                <Image />
-              </SponsorWrapper>
-            </Link>
+            <li key={sponsor.name}>
+              <Link href={sponsor.link}>
+                <SponsorWrapper>
+                  <Image />
+                </SponsorWrapper>
+              </Link>
+            </li>
           );
         })}
       </Wrapper>
@@ -37,7 +39,7 @@ export const Sponsors = () => {
   );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.ul`
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;

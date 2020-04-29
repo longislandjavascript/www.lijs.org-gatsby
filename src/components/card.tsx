@@ -9,7 +9,7 @@ type Props = {
 
 const StyledCard = styled.div`
   background-color: ${p => p.theme.colors.blueDark};
-  border-radius: 1.5em;
+  border-radius: ${p => p.theme.borderRadius};
   max-width: 100%;
   padding: 20px;
   overflow-y: scroll;

@@ -17,7 +17,7 @@ type Props = {
 
 export const Layout: React.FC<Props> = ({ children, title, fullWidth }) => {
   const { width } = useWindowSize(1280, 1080);
-  const isSmall = useMemo(() => width < 700, [width]);
+  const isSmall = useMemo(() => width < 960, [width]);
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(!isSmall);
 
