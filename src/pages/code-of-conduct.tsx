@@ -1,8 +1,7 @@
 import React from "react";
 import { Layout } from "../components/layout";
 import { SEO } from "../components/seo";
-import { Card } from "../components/Card";
-import { BigP } from "../components/big-p";
+import { Card } from "../components/card";
 
 const CodeOfConduct = () => {
   return (

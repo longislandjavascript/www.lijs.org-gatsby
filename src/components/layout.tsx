@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useMemo } from "react";
-import { useStaticQuery, graphql } from "gatsby";
 import { ThemeProvider } from "emotion-theming";
 import { theme } from "../theme";
 import { Header } from "./header";
 import { Sidebar } from "./sidebar";
-import { Main } from "./Main";
+import { Main } from "./main";
 import { CrookedTitle } from "./crooked-title";
 import { useClickOutside } from "../hooks/use-click-outside";
 import { useWindowSize } from "react-hooks-window-size";
