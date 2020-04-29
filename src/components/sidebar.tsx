@@ -20,8 +20,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ forwardRef }) => {
         <Show when={!isSmall}>
           <li>
             <LIJSLogo type="sidebar" />
+            <br />
           </li>
-          <br />
         </Show>
 
         {links.map(link => {
