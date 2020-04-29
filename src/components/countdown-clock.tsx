@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import styled from "../theme";
-import { Show } from "./show";
 import { useTimer } from "../hooks/use-timer";
 
 type Props = {
@@ -14,8 +13,8 @@ const Card = styled.div`
   align-items: center;
   justify-content: space-evenly;
   border-radius: 20px;
-  padding-top: 20px;
-  height: 80px;
+  padding: 10px;
+  height: 90px;
 `;
 
 const TimeUnit = styled.div`
@@ -28,6 +27,7 @@ const TimeUnit = styled.div`
   p {
     font-size: 14px;
     padding: 0;
+    margin: 0;
     line-height: 1.2;
   }
   .time-value {
