@@ -45,7 +45,7 @@ export const SEO = ({ description, pathname, meta = [], title }: Props) => {
         images: [
           {
             url:
-              "https://res.cloudinary.com/gojutin/image/upload/v1588191526/lijs.org/lijs-logo.png",
+              "https://res.cloudinary.com/gojutin/image/upload/v1588207007/lijs.org/lijs-logo.png",
             width: 700,
             height: 700,
             alt: "Long Island JavaScript Meetup",
