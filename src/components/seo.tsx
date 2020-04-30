@@ -1,5 +1,5 @@
 import React from "react";
-import { GatsbySeo } from "gatsby-plugin-next-seo";
+import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
 type Props = {
@@ -28,35 +28,66 @@ export const SEO = ({ description, pathname, meta = [], title }: Props) => {
   );
 
   const metaDescription = description || site.siteMetadata.description;
-  // const metaKeywords = site.siteMetadata.keywords.join(",");
+  const metaKeywords = site.siteMetadata.keywords.join(",");
 
   return (
     // @ts-ignore
-    <GatsbySeo
+    <Helmet
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
-      canonical={`${site.siteMetadata.siteUrl}${pathname}`}
-      description={metaDescription}
-      openGraph={{
-        url: site.siteMetadata.siteUrl,
-        title,
-        description: metaDescription,
-        type: "website",
-        images: [
-          {
-            url:
-              "https://res.cloudinary.com/gojutin/image/upload/v1588207007/lijs.org/lijs-logo.png",
-            width: 700,
-            height: 700,
-            alt: "Long Island JavaScript Meetup",
-          },
-        ],
-      }}
-      twitter={{
-        // handle: "@handle",
-        // site: "@site",
-        cardType: "summary_large_image",
-      }}
+      htmlAttributes={{ lang: "en" }}
+      link={[
+        {
+          rel: "canonical",
+          href: `${site.siteMetadata.siteUrl}${pathname}`,
+        },
+      ]}
+      meta={[
+        {
+          name: `description`,
+          content: metaDescription,
+        },
+        {
+          name: "keywords",
+          content: metaKeywords,
+        },
+        {
+          property: `og:title`,
+          content: title,
+        },
+        {
+          property: `og:description`,
+          content: metaDescription,
+        },
+        {
+          property: `og:type`,
+          content: `website`,
+        },
+        {
+          property: `og:image`,
+          content: `https://res.cloudinary.com/gojutin/image/upload/v1588207007/lijs.org/lijs-logo.png`,
+        },
+        {
+          name: `twitter:card`,
+          content: `summary_large_image`,
+        },
+        {
+          property: `twitter:image`,
+          content: `https://res.cloudinary.com/gojutin/image/upload/v1588207007/lijs.org/lijs-logo.png`,
+        },
+        {
+          name: `twitter:creator`,
+          content: site.siteMetadata.author,
+        },
+        {
+          name: `twitter:title`,
+          content: title,
+        },
+        {
+          name: `twitter:description`,
+          content: metaDescription,
+        },
+      ].concat(meta)}
     />
   );
 };
