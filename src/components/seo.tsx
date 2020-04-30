@@ -61,7 +61,7 @@ export const SEO = ({ description, pathname, meta = [], title }: Props) => {
           content: metaKeywords,
         },
         {
-          name: `og:title`,
+          property: `og:title`,
           content: title,
         },
         {
