@@ -9,14 +9,15 @@ import {
   FaScroll,
   FaDesktop,
   FaCalendarDay,
+  FaHistory,
 } from "react-icons/fa";
 import { BsClockHistory } from "react-icons/bs";
-import { DDDLogo } from "../components/ddd-logo";
+import { DDDIcon } from "../components/ddd-icon";
 
 export const links = [
   ["Next Event", "/", FaCalendarDay],
   ["Watch Now", "/watch", FaDesktop],
-  ["Past Events", "/past-events", BsClockHistory],
+  ["Past Events", "/past-events", FaHistory],
   ["About Us", "/about", FaUsers],
   ["Contact Us", "/contact", FaRegEnvelope],
   ["FAQ", "/faq", FaQuestionCircle],
@@ -31,5 +32,5 @@ export const links = [
 
   ["GitHub", "https://github.com/lijs-meetup", FaGithub],
   ["Twitch", "https://www.twitch.tv/longislandjavascript", FaTwitch],
-  ["Developer Deep Dives", "https://www.developerdeepdives.com", DDDLogo],
+  ["Developer Deep Dives", "https://www.developerdeepdives.com", DDDIcon],
 ] as const;

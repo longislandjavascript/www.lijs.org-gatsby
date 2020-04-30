@@ -30,10 +30,8 @@ export const Layout: React.FC<Props> = ({ children, title, fullWidth }) => {
 
   useEffect(
     function toggleSidebarOnWidthChange() {
-      setTimeout(() => {
-        setIsSidebarOpen(!isSmall);
-        setReady(true);
-      }, 100);
+      setIsSidebarOpen(!isSmall);
+      setReady(true);
     },
     [isSmall]
   );

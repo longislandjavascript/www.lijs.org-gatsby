@@ -7,6 +7,7 @@ export const theme: DefaultTheme = {
     logoYellow: "hsla(51, 99%, 45%, 1)",
     blueDark: "hsl(202, 100%, 20%)",
     blueDarkest: "hsl(202, 100%, 15%)",
+
     textDark: "#333",
     textLight: "#f8f8f8",
   },
