@@ -38,6 +38,7 @@ export const query = graphql`
         description
         time
         id
+        link
         utc_offset
         venue {
           name

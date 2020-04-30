@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import { FaMeetup } from "react-icons/fa";
 import { Card } from "../components/card";
-import { Link } from "../components/link";
+
 import { LinkButton } from "../components/link-button";
 import { MeetupEvent } from "../types";
 import dayjs from "dayjs";
@@ -43,6 +44,7 @@ export const Event: React.FC<EventProps> = ({ data, isNextEvent }) => {
       <div dangerouslySetInnerHTML={{ __html: data.description }} />
 
       <LinkButton href={data.link}>
+        <FaMeetup size={20} style={{ marginRight: "5px" }} />
         {isNextEvent ? "RSVP" : "View"} on Meetup
       </LinkButton>
     </Card>

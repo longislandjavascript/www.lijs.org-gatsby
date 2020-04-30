@@ -4,10 +4,12 @@ import styled from "styled-components";
 import { Link } from "./link";
 
 export const LinkButton = styled(Link)`
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   background: ${p => p.theme.colors.logoBlue};
   font-weight: 600;
-  padding: 5px 10px;
+  padding: 4px 10px;
   border-radius: 30px;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  color: white;
 `;
