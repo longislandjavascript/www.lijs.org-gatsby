@@ -1,31 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { FaMeetup } from "react-icons/fa";
-import { Card } from "../components/card";
+import { Card } from "./card";
+import { Show } from "./show";
 
 import { LinkButton } from "../components/link-button";
 import { MeetupEvent } from "../types";
 import dayjs from "dayjs";
-
-const EventTitle = styled.h2`
-  color: ${p => p.theme.colors.logoYellow};
-  margin: 10px 0px;
-  font-size: ${p => (p.theme.isSmall ? "1.4rem" : "1.8rem")};
-  line-height: 2rem;
-  font-weight: 600;
-  font-family: sans-serif;
-`;
-
-const Deets = styled.span`
-  display: inline-block;
-  padding: 0px 10px;
-  border-radius: 6px;
-  background-color: ${p => p.theme.colors.blueDarkest};
-  color: ${p => p.theme.colors.logoYellow};
-  font-size: 14px;
-  margin: 0px 0px;
-  font-weight: 400;
-`;
 
 export type EventProps = {
   data: MeetupEvent;
@@ -33,15 +14,24 @@ export type EventProps = {
 };
 
 export const Event: React.FC<EventProps> = ({ data, isNextEvent }) => {
+  const [viewDescription, setViewDescription] = useState(isNextEvent);
+  function toggleViewDescription() {
+    setViewDescription(o => !o);
+  }
   const date = dayjs(new Date(data.time)).format("MMMM DD, YYYY");
   return (
-    <Card>
+    <Card title={date} subTitle={data.venue.name}>
       <EventTitle> {data.name}</EventTitle>
-      <Deets>
-        {date} &middot; {data.venue.name}
-      </Deets>
 
-      <div dangerouslySetInnerHTML={{ __html: data.description }} />
+      {viewDescription && (
+        <div dangerouslySetInnerHTML={{ __html: data.description }} />
+      )}
+
+      <Show when={!isNextEvent && !viewDescription}>
+        <ViewDescriptionButton onClick={toggleViewDescription}>
+          View Description
+        </ViewDescriptionButton>
+      </Show>
 
       <LinkButton href={data.link}>
         <FaMeetup size={20} style={{ marginRight: "5px" }} />
@@ -50,3 +40,31 @@ export const Event: React.FC<EventProps> = ({ data, isNextEvent }) => {
     </Card>
   );
 };
+
+const EventTitle = styled.h2`
+  color: ${p => p.theme.colors.logoYellow};
+  margin: 10px 0px 5px 0px;
+  font-size: 1.8rem;
+  line-height: 2rem;
+  font-weight: 600;
+  font-family: sans-serif;
+
+  ${p => p.theme.small} {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+  }
+`;
+
+const ViewDescriptionButton = styled.button`
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 10px 0px;
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: underline;
+  }
+`;

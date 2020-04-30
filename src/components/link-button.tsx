@@ -1,9 +1,9 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import { Link } from "./link";
 
-export const LinkButton = styled(Link)`
+const baseStyles = css`
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -14,8 +14,10 @@ export const LinkButton = styled(Link)`
   font-size: 0.8rem;
   color: white;
 
-  @media (max-width: 960px) {
+  ${p => p.theme.small} {
+    font-size: 0.9rem;
     display: flex;
+    padding: 10px 10px;
   }
 
   &:hover,
@@ -24,4 +26,8 @@ export const LinkButton = styled(Link)`
     background: ${p => p.theme.colors.logoBlue};
     opacity: 0.9;
   }
+`;
+
+export const LinkButton = styled(Link)`
+  ${baseStyles}
 `;

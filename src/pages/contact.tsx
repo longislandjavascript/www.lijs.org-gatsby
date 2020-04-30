@@ -11,26 +11,6 @@ function encode(data) {
 }
 
 const ContactPage: React.FC<PageProps> = ({ location }) => {
-  const [state, setState] = useState({});
-
-  const handleChange = e => {
-    setState({ ...state, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = e => {
-    e.preventDefault();
-    const form = e.target;
-    console.log(state);
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        "form-name": form.getAttribute("name"),
-        ...state,
-      }),
-    }).catch(error => alert(error));
-  };
-
   return (
     <Layout title="Contact Us">
       <SEO title="Contact Us" pathname={location.pathname} />
@@ -39,7 +19,6 @@ const ContactPage: React.FC<PageProps> = ({ location }) => {
         data-netlify="true"
         method="POST"
         netlify-honeypot="bot-field"
-        onSubmit={handleSubmit}
       >
         <input type="hidden" name="form-name" value="contact" />
         <p className="hidden">
@@ -51,7 +30,6 @@ const ContactPage: React.FC<PageProps> = ({ location }) => {
           defaultValue="question"
           aria-label="Contact Reason Select Box"
           name="Reason"
-          onChange={handleChange}
         >
           <option value="question" disabled={true}>
             I have a question or suggestion
@@ -67,7 +45,6 @@ const ContactPage: React.FC<PageProps> = ({ location }) => {
           placeholder="Your Name"
           required={true}
           aria-label="Your Name"
-          onChange={handleChange}
         />
 
         <input
@@ -76,7 +53,6 @@ const ContactPage: React.FC<PageProps> = ({ location }) => {
           required={true}
           placeholder="Your Email Address"
           aria-label="Your Email"
-          onChange={handleChange}
         />
         <textarea
           rows={8}
@@ -84,7 +60,6 @@ const ContactPage: React.FC<PageProps> = ({ location }) => {
           placeholder="Your Message"
           required={true}
           aria-label="Your Message"
-          onChange={handleChange}
         />
         <button type="submit">Submit</button>
       </Form>
@@ -111,6 +86,10 @@ const Form = styled.form`
     font-size: 18px;
     margin: 5px 0px;
     transition: border-color 300ms;
+  }
+
+  button {
+    font-weight: 500;
   }
 
   input:focus,

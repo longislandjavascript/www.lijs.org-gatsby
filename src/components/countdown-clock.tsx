@@ -16,7 +16,7 @@ const Card = styled.div`
   padding: 10px;
   height: 90px;
 
-  @media (max-width: 960px) {
+  ${p => p.theme.small} {
     max-width: 100%;
   }
 `;

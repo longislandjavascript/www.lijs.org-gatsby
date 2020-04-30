@@ -11,7 +11,7 @@ const StyledMain = styled.main`
   min-height: 100vh;
   padding: 30px 5%;
 
-  @media (max-width: 960px) {
+  ${p => p.theme.small} {
     top: ${p => p.theme.headerHeight}px;
     left: 0;
   }

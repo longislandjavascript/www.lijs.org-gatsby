@@ -69,12 +69,12 @@ const StyledAside = styled.aside`
   left: ${p => (p.theme.isSidebarOpen ? 0 : "-100%")};
   transition: left 300ms ease-in-out;
   z-index: 9999;
-  box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.2);
+  /* box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.2); */
   .logo {
     display: block;
   }
 
-  @media (max-width: 960px) {
+  ${p => p.theme.small} {
     top: ${p => p.theme.headerHeight}px;
     .logo {
       display: none;

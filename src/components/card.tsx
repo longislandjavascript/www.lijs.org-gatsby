@@ -5,6 +5,26 @@ import { CrookedTitle } from "./crooked-title";
 
 type Props = {
   title?: string;
+  subTitle?: string;
+};
+
+export const Card: React.FC<Props> = ({ children, title, subTitle }) => {
+  return (
+    <StyledCard>
+      <Show when={!!title}>
+        <TitleWrapper>
+          <CrookedTitle as="h2">
+            <CrookedTitleFlexContainer>
+              <span>{title}</span>
+              <span className="subtitle">{subTitle}</span>
+            </CrookedTitleFlexContainer>
+          </CrookedTitle>
+        </TitleWrapper>
+      </Show>
+
+      {children}
+    </StyledCard>
+  );
 };
 
 const StyledCard = styled.div`
@@ -18,21 +38,19 @@ const StyledCard = styled.div`
 
 const TitleWrapper = styled.div`
   text-align: left;
-  @media (max-width: 960px) {
+  ${p => p.theme.small} {
     text-align: center;
   }
 `;
 
-export const Card: React.FC<Props> = ({ children, title }) => {
-  return (
-    <StyledCard>
-      <Show when={!!title}>
-        <TitleWrapper>
-          <CrookedTitle as="h2">{title}</CrookedTitle>
-        </TitleWrapper>
-      </Show>
+const CrookedTitleFlexContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-      {children}
-    </StyledCard>
-  );
-};
+  .subtitle {
+    font-size: 12px;
+    text-transform: capitalize;
+  }
+`;

@@ -16,4 +16,5 @@ export const theme: DefaultTheme = {
   headerHeight: 75,
   isSidebarOpen: false,
   borderRadius: ".8rem",
+  small: "@media (max-width: 960px)",
 };
