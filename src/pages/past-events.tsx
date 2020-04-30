@@ -5,6 +5,7 @@ import { SEO } from "../components/seo";
 import { Event } from "../components/event";
 import { LinkButton } from "../components/link-button";
 import { MeetupEvent } from "../types";
+import { FaMeetup } from "react-icons/fa";
 
 interface Props extends PageProps {
   data: {
@@ -22,6 +23,7 @@ const PastEventsPage: React.FC<Props> = ({ data, location }) => {
         return <Event key={event.id} data={event} />;
       })}
       <LinkButton href="https://www.meetup.com/long-island-javascript-group/events/past/">
+        <FaMeetup size={20} style={{ marginRight: "5px" }} />
         View older events on Meetup
       </LinkButton>
     </Layout>
