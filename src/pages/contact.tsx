@@ -1,6 +1,6 @@
 import React from "react";
 import { PageProps } from "gatsby";
-import styled from "../theme";
+import styled from "styled-components";
 import { Layout } from "../components/layout";
 import { SEO } from "../components/seo";
 

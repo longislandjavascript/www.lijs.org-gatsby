@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "../../theme";
+import styled from "styled-components";
 import { Card } from "../card";
 import { Justin } from "./justin";
 import { Scott } from "./scott";
@@ -36,7 +36,7 @@ export const Organizers = () => {
           const Image = organizer.image;
           return (
             <li key={organizer.name}>
-              <Link to={organizer.link}>
+              <Link href={organizer.link}>
                 <OrganizerWrapper>
                   <Avatar color={colors[index]} aria-hidden={true}>
                     <Image />

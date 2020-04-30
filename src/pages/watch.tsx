@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { PageProps } from "gatsby";
-import styled from "../theme";
+import styled from "styled-components";
 import ReactPlayer from "react-player";
 import { Layout } from "../components/layout";
 import { Show } from "../components/show";

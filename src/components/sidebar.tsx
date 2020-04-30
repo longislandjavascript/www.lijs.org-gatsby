@@ -1,7 +1,6 @@
 import React from "react";
-import { useTheme } from "emotion-theming";
 import { FaExternalLinkAlt } from "react-icons/fa";
-import styled from "../theme";
+import styled from "styled-components";
 import { LIJSLogo } from "./lijs-logo";
 import { Link } from "./link";
 import { Show } from "./show";
@@ -12,17 +11,13 @@ export type SidebarProps = {
 };
 
 export const Sidebar: React.FC<SidebarProps> = ({ forwardRef }) => {
-  const { isSmall } = useTheme();
-
   return (
     <StyledAside ref={forwardRef}>
       <ul>
-        <Show when={!isSmall}>
-          <li>
-            <LIJSLogo type="sidebar" />
-            <br />
-          </li>
-        </Show>
+        <li className="logo">
+          <LIJSLogo type="sidebar" />
+          <br />
+        </li>
 
         {links.map(link => {
           const [label, to, Icon] = link;
@@ -66,15 +61,25 @@ const SidebarLink = styled(Link)`
 const StyledAside = styled.aside`
   width: ${p => p.theme.sidebarWidth}px;
   overflow: scroll;
-  padding: 10px;
+  padding: 10px 10px 100px 10px;
   background: ${p => p.theme.colors.blueDark};
   position: fixed;
-  top: ${p => (p.theme.isSmall ? p.theme.headerHeight + "px" : "0px")};
+  top: 0;
   bottom: 0;
   left: ${p => (p.theme.isSidebarOpen ? 0 : "-100%")};
   transition: left 300ms ease-in-out;
   z-index: 9999;
   box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.2);
+  .logo {
+    display: block;
+  }
+
+  @media (max-width: 960px) {
+    top: ${p => p.theme.headerHeight}px;
+    .logo {
+      display: none;
+    }
+  }
   ul {
     margin-top: 10px;
   }

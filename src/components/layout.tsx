@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from "react";
-import { ThemeProvider } from "emotion-theming";
+import { ThemeProvider } from "styled-components";
 import { theme } from "../theme";
 import { Header } from "./header";
 import { Sidebar } from "./sidebar";
@@ -16,10 +16,11 @@ type Props = {
 };
 
 export const Layout: React.FC<Props> = ({ children, title, fullWidth }) => {
+  const [ready, setReady] = useState(false);
   const { width } = useWindowSize(1280, 1080);
   const isSmall = useMemo(() => width < 960, [width]);
 
-  const [isSidebarOpen, setIsSidebarOpen] = useState(!isSmall);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   function toggleSidebar() {
     setIsSidebarOpen(o => !o);
@@ -27,12 +28,16 @@ export const Layout: React.FC<Props> = ({ children, title, fullWidth }) => {
 
   useEffect(
     function toggleSidebarOnWidthChange() {
-      setIsSidebarOpen(!isSmall);
+      setTimeout(() => {
+        setIsSidebarOpen(!isSmall);
+        setReady(true);
+      }, 100);
     },
     [isSmall]
   );
 
   const ref = useClickOutside(e => {
+    // @ts-ignore
     if (isSmall && isSidebarOpen && e.target.id !== "toggle-button") {
       toggleSidebar();
     }
@@ -40,15 +45,20 @@ export const Layout: React.FC<Props> = ({ children, title, fullWidth }) => {
 
   return (
     <ThemeProvider theme={{ ...theme, isSmall, isSidebarOpen }}>
-      <Show when={isSmall}>
-        <Header onRequestOpenSidebar={toggleSidebar} />
-      </Show>
+      <Show when={ready}>
+        <Show when={isSmall}>
+          <Header
+            onRequestOpenSidebar={toggleSidebar}
+            isSidebarOpen={isSidebarOpen}
+          />
+        </Show>
 
-      <Sidebar forwardRef={ref} />
-      <Main fullWidth={fullWidth}>
-        <CrookedTitle>{title}</CrookedTitle>
-        <div style={{ marginTop: "25px" }}>{children}</div>
-      </Main>
+        <Sidebar forwardRef={ref} />
+        <Main fullWidth={fullWidth}>
+          <CrookedTitle>{title}</CrookedTitle>
+          <div style={{ marginTop: "25px" }}>{children}</div>
+        </Main>
+      </Show>
     </ThemeProvider>
   );
 };

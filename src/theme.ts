@@ -1,6 +1,6 @@
-import styled, { CreateStyled } from "@emotion/styled";
+import { DefaultTheme } from "styled-components";
 
-export const theme = {
+export const theme: DefaultTheme = {
   colors: {
     logoBlue: "hsla(216, 90%, 54%, 1)",
     logoPurple: "hsla(270, 90%, 54%, 1)",
@@ -15,6 +15,4 @@ export const theme = {
   headerHeight: 75,
   isSidebarOpen: false,
   borderRadius: ".8rem",
-} as const;
-
-export default styled as CreateStyled<typeof theme>;
+};

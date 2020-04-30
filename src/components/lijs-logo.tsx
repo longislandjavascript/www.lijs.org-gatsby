@@ -1,7 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
-import styled from "../theme";
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   display: flex;

@@ -1,4 +1,5 @@
-import styled from "../theme";
+import React from "react";
+import styled from "styled-components";
 import { FaExclamationTriangle } from "react-icons/fa";
 
 const StyledAlertBox = styled.div`

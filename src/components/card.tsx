@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "../theme";
+import styled from "styled-components";
 import { Show } from "./show";
 import { CrookedTitle } from "./crooked-title";
 
@@ -17,7 +17,10 @@ const StyledCard = styled.div`
 `;
 
 const TitleWrapper = styled.div`
-  text-align: ${p => (p.theme.isSmall ? "center" : "left")};
+  text-align: left;
+  @media (max-width: 960px) {
+    text-align: center;
+  }
 `;
 
 export const Card: React.FC<Props> = ({ children, title }) => {

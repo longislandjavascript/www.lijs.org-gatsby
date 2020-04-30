@@ -1,22 +1,22 @@
-/**@jsx jsx */
-import { css, jsx } from "@emotion/core";
+import React from "react";
+import { css } from "styled-components";
 import { Link as GatsbyLink } from "gatsby";
 
-const baseStyles = theme => css`
+const baseStyles = css`
   display: block;
   padding: 20px;
-  border-radius: ${theme.borderRadius};
+  border-radius: ${p => p.theme.borderRadius};
   text-decoration: none;
   outline: none;
   transition: background-color 300ms;
   &:hover,
   &:focus {
-    background-color: ${theme.isSmall
-      ? theme.colors.blueDarkest
-      : theme.colors.blueDarkest};
+    background-color: ${p =>
+      p.theme.isSmall
+        ? p.theme.colors.blueDarkest
+        : p.theme.colors.blueDarkest};
   }
 `;
-
 type Props = {
   to?: string;
   href?: string;
@@ -45,6 +45,7 @@ export const Link: React.FC<Props> = ({
     return (
       <a
         href={href}
+        // @ts-ignore
         css={baseStyles}
         target="_blank"
         rel="noopener noreferrer"

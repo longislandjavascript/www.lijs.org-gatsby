@@ -18,7 +18,7 @@ const PastEventsPage: React.FC<Props> = ({ data, location }) => {
     <Layout title="Past Events">
       <SEO title="Past Events" pathname={location.pathname} />
       {data.allMeetupEvent.nodes.map(event => {
-        return <Event key={event.time} data={event} />;
+        return <Event key={event.id} data={event} />;
       })}
     </Layout>
   );
@@ -33,6 +33,7 @@ export const query = graphql`
         name
         description
         time
+        id
         utc_offset
         venue {
           name

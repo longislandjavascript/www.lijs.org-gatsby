@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import styled from "../theme";
+import styled from "styled-components";
 import { useTimer } from "../hooks/use-timer";
 
 type Props = {
@@ -8,13 +8,17 @@ type Props = {
 
 const Card = styled.div`
   background-color: ${p => p.theme.colors.blueDark};
-  max-width: ${p => (p.theme.isSmall ? "100%" : "270px")};
+  max-width: 270px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   border-radius: 20px;
   padding: 10px;
   height: 90px;
+
+  @media (max-width: 960px) {
+    max-width: 100%;
+  }
 `;
 
 const TimeUnit = styled.div`

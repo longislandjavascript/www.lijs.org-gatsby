@@ -28,7 +28,7 @@ export const SEO = ({ description, pathname, meta = [], title }: Props) => {
   );
 
   const metaDescription = description || site.siteMetadata.description;
-  const metaKeywords = site.siteMetadata.keywords.join(",");
+  // const metaKeywords = site.siteMetadata.keywords.join(",");
 
   return (
     // @ts-ignore

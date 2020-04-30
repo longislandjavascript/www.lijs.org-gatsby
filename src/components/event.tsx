@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "../theme";
+import styled from "styled-components";
 import { Card } from "../components/card";
 import { MeetupEvent } from "../types";
 import dayjs from "dayjs";

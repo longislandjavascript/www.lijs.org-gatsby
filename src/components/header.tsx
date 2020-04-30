@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "../theme";
+import styled from "styled-components";
 import { LIJSLogo } from "./lijs-logo";
 import { RiMenu4Line } from "react-icons/ri";
 
@@ -19,18 +19,27 @@ const StyledHeader = styled.header`
 
 type Props = {
   onRequestOpenSidebar(): void;
+  isSidebarOpen: boolean;
 };
 
-export const Header: React.FC<Props> = ({ onRequestOpenSidebar }) => (
+export const Header: React.FC<Props> = ({
+  onRequestOpenSidebar,
+  isSidebarOpen,
+}) => (
   <StyledHeader>
     <LIJSLogo type="header" />
-    <MenuButton onClick={onRequestOpenSidebar} id="toggle-button" />
+    <MenuButton
+      onClick={onRequestOpenSidebar}
+      id="toggle-button"
+      isSidebarOpen={isSidebarOpen}
+    />
   </StyledHeader>
 );
 
 type MenuButtonProps = {
   onClick(): void;
   id: string;
+  isSidebarOpen: boolean;
 };
 
 const StyledMenuItemButton = styled.button`
@@ -49,9 +58,15 @@ const StyledMenuItemButton = styled.button`
   }
 `;
 
-const MenuButton = ({ onClick, id }: MenuButtonProps) => {
+const MenuButton = ({ onClick, id, isSidebarOpen }: MenuButtonProps) => {
   return (
-    <StyledMenuItemButton id={id} onClick={onClick}>
+    <StyledMenuItemButton
+      id={id}
+      onClick={onClick}
+      aria-expanded={isSidebarOpen}
+      aria-pressed={isSidebarOpen}
+      aria-label="Menu Toggle"
+    >
       <RiMenu4Line size={24} style={{ pointerEvents: "none" }} />
     </StyledMenuItemButton>
   );
