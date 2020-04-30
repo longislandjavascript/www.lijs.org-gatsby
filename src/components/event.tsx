@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { FaMeetup } from "react-icons/fa";
 import { Card } from "./card";
 import { Show } from "./show";
+import { Button } from "../components/button";
 
 import { LinkButton } from "../components/link-button";
 import { MeetupEvent } from "../types";
@@ -27,16 +28,17 @@ export const Event: React.FC<EventProps> = ({ data, isNextEvent }) => {
         <div dangerouslySetInnerHTML={{ __html: data.description }} />
       )}
 
-      <Show when={!isNextEvent && !viewDescription}>
-        <ViewDescriptionButton onClick={toggleViewDescription}>
-          View Description
-        </ViewDescriptionButton>
-      </Show>
-
-      <LinkButton href={data.link}>
-        <FaMeetup size={20} style={{ marginRight: "5px" }} />
-        {isNextEvent ? "RSVP" : "View"} on Meetup
-      </LinkButton>
+      <ButtonWrapper>
+        <LinkButton href={data.link}>
+          <FaMeetup size={20} style={{ marginRight: "5px" }} />
+          {isNextEvent ? "RSVP" : "View"} on Meetup
+        </LinkButton>
+        <Show when={!isNextEvent && !viewDescription}>
+          <Button className="description" onClick={toggleViewDescription}>
+            View Description
+          </Button>
+        </Show>
+      </ButtonWrapper>
     </Card>
   );
 };
@@ -44,10 +46,9 @@ export const Event: React.FC<EventProps> = ({ data, isNextEvent }) => {
 const EventTitle = styled.h2`
   color: ${p => p.theme.colors.logoYellow};
   margin: 10px 0px 5px 0px;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   line-height: 2rem;
   font-weight: 600;
-  font-family: sans-serif;
 
   ${p => p.theme.small} {
     font-size: 1.4rem;
@@ -55,16 +56,20 @@ const EventTitle = styled.h2`
   }
 `;
 
-const ViewDescriptionButton = styled.button`
-  display: block;
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin: 10px 0px;
+const ButtonWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 20px;
 
-  &:hover,
-  &:active,
-  &:focus {
-    text-decoration: underline;
+  .description {
+    margin-left: 10px;
+  }
+
+  ${p => p.theme.small} {
+    .description {
+      margin-left: 0px;
+    }
   }
 `;

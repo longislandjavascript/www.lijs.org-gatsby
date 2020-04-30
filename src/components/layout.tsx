@@ -11,7 +11,7 @@ import { SkipLink } from "./skip-link";
 import { CrookedTitle } from "./crooked-title";
 import { useClickOutside } from "../hooks/use-click-outside";
 import { useWindowSize } from "react-hooks-window-size";
-import "./layout.css";
+import { GlobalCss } from "./global-css";
 
 type Props = {
   title: string;
@@ -46,6 +46,7 @@ export const Layout: React.FC<Props> = ({ children, title, fullWidth }) => {
 
   return (
     <ThemeProvider theme={{ ...theme, isSmall, isSidebarOpen }}>
+      <GlobalCss />
       <Helmet htmlAttributes={{ lang: "en" }} />
       <SkipLink href="#main-content">Skip to main content</SkipLink>
 

@@ -3,6 +3,7 @@ import { PageProps } from "gatsby";
 import styled from "styled-components";
 import { Layout } from "../components/layout";
 import { SEO } from "../components/seo";
+import { Button } from "../components/button";
 
 function encode(data) {
   return Object.keys(data)
@@ -61,7 +62,7 @@ const ContactPage: React.FC<PageProps> = ({ location }) => {
           required={true}
           aria-label="Your Message"
         />
-        <button type="submit">Submit</button>
+        <Button type="submit">Submit</Button>
       </Form>
     </Layout>
   );
@@ -74,8 +75,7 @@ const Form = styled.form`
   margin: 0px;
   input,
   select,
-  textarea,
-  button {
+  textarea {
     border-radius: 0.5rem;
     background: ${p => p.theme.colors.blueDark};
     padding: 10px 15px;
@@ -88,24 +88,10 @@ const Form = styled.form`
     transition: border-color 300ms;
   }
 
-  button {
-    font-weight: 500;
-  }
-
   input:focus,
   select:focus,
-  textarea:focus,
-  button:focus {
+  textarea:focus {
     border-color: ${p => p.theme.colors.logoYellow};
-  }
-
-  button {
-    background-color: ${p => p.theme.colors.logoBlue};
-    cursor: pointer;
-  }
-
-  button:hover {
-    opacity: 0.9;
   }
 
   input::placeholder,

@@ -4,6 +4,7 @@ import { Layout } from "../components/layout";
 import { SEO } from "../components/seo";
 import { Event } from "../components/event";
 import { LinkButton } from "../components/link-button";
+
 import { MeetupEvent } from "../types";
 import { FaMeetup } from "react-icons/fa";
 

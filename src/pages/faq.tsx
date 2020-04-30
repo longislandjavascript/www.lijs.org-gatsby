@@ -9,7 +9,7 @@ const Question = styled.p`
   color: ${p => p.theme.colors.logoYellow};
   font-size: 1.2rem;
   line-height: 1.5rem;
-  font-weight: 600;
+  font-weight: 700;
 `;
 
 const Answer = styled.p`
