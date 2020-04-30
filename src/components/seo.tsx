@@ -65,35 +65,35 @@ export const SEO = ({ description, pathname, meta = [], title }: Props) => {
           content: title,
         },
         {
-          name: `og:description`,
+          property: `og:description`,
           content: metaDescription,
         },
         {
-          name: `og:type`,
+          property: `og:type`,
           content: `website`,
         },
         {
-          name: `og:image`,
+          property: `og:image`,
           content: `https://res.cloudinary.com/gojutin/image/upload/v1588207007/lijs.org/lijs-logo.png`,
         },
         {
-          name: `twitter:card`,
+          property: `twitter:card`,
           content: `summary`,
         },
         {
-          name: `twitter:image`,
+          property: `twitter:image`,
           content: `https://res.cloudinary.com/gojutin/image/upload/v1588207007/lijs.org/lijs-logo.png`,
         },
         {
-          name: `twitter:creator`,
+          property: `twitter:creator`,
           content: site.siteMetadata.author,
         },
         {
-          name: `twitter:title`,
+          property: `twitter:title`,
           content: title,
         },
         {
-          name: `twitter:description`,
+          property: `twitter:description`,
           content: metaDescription,
         },
       ].concat(meta)}
