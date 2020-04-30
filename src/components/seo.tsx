@@ -41,6 +41,15 @@ export const SEO = ({ description, pathname, meta = [], title }: Props) => {
           rel: "canonical",
           href: `${site.siteMetadata.siteUrl}${pathname}`,
         },
+        {
+          rel: "icon",
+          sizes: "192x192",
+          href: "/lijs-logo-192.png",
+        },
+        {
+          rel: "apple-touch-icon",
+          href: "/apple-touch-icon.png",
+        },
       ]}
       meta={[
         {
@@ -52,19 +61,19 @@ export const SEO = ({ description, pathname, meta = [], title }: Props) => {
           content: metaKeywords,
         },
         {
-          property: `og:title`,
+          name: `og:title`,
           content: title,
         },
         {
-          property: `og:description`,
+          name: `og:description`,
           content: metaDescription,
         },
         {
-          property: `og:type`,
+          name: `og:type`,
           content: `website`,
         },
         {
-          property: `og:image`,
+          name: `og:image`,
           content: `https://res.cloudinary.com/gojutin/image/upload/v1588207007/lijs.org/lijs-logo.png`,
         },
         {
@@ -72,7 +81,7 @@ export const SEO = ({ description, pathname, meta = [], title }: Props) => {
           content: `summary_large_image`,
         },
         {
-          property: `twitter:image`,
+          name: `twitter:image`,
           content: `https://res.cloudinary.com/gojutin/image/upload/v1588207007/lijs.org/lijs-logo.png`,
         },
         {
