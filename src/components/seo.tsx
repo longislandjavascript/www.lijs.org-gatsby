@@ -41,17 +41,17 @@ export const SEO = ({ description, pathname, meta = [], title }: Props) => {
           rel: "canonical",
           href: `${site.siteMetadata.siteUrl}${pathname}`,
         },
-        {
-          rel: "icon",
-          sizes: "192x192",
-          href:
-            "https://res.cloudinary.com/gojutin/image/upload/v1588285813/lijs.org/lijs-logo-192.png",
-        },
-        {
-          rel: "apple-touch-icon",
-          href:
-            "https://res.cloudinary.com/gojutin/image/upload/v1588285813/lijs.org/apple-touch-icon.png",
-        },
+        // {
+        //   rel: "icon",
+        //   sizes: "192x192",
+        //   href:
+        //     "https://res.cloudinary.com/gojutin/image/upload/v1588285813/lijs.org/lijs-logo-192.png",
+        // },
+        // {
+        //   rel: "apple-touch-icon",
+        //   href:
+        //     "https://res.cloudinary.com/gojutin/image/upload/v1588285813/lijs.org/apple-touch-icon.png",
+        // },
       ]}
       meta={[
         {
