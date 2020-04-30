@@ -51,6 +51,7 @@ const CrookedTitleFlexContainer = styled.div`
 
   .subtitle {
     font-size: 12px;
+    line-height: 1;
     text-transform: capitalize;
   }
 `;
