@@ -24,10 +24,11 @@ const Container = styled.div<{ fullWidth: boolean }>`
 type Props = {
   children: React.ReactNode;
   fullWidth: boolean;
+  id: string;
 };
-export const Main = ({ children, fullWidth }: Props) => {
+export const Main = ({ children, fullWidth, id }: Props) => {
   return (
-    <StyledMain>
+    <StyledMain id={id}>
       <Container fullWidth={fullWidth}>{children}</Container>
     </StyledMain>
   );

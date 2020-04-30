@@ -7,6 +7,7 @@ import { Header } from "./header";
 import { Sidebar } from "./sidebar";
 import { Main } from "./main";
 import { Show } from "./show";
+import { SkipLink } from "./skip-link";
 import { CrookedTitle } from "./crooked-title";
 import { useClickOutside } from "../hooks/use-click-outside";
 import { useWindowSize } from "react-hooks-window-size";
@@ -46,6 +47,7 @@ export const Layout: React.FC<Props> = ({ children, title, fullWidth }) => {
   return (
     <ThemeProvider theme={{ ...theme, isSmall, isSidebarOpen }}>
       <Helmet htmlAttributes={{ lang: "en" }} />
+      <SkipLink href="#main-content">Skip to main content</SkipLink>
 
       <Show when={isSmall}>
         <Header
@@ -55,7 +57,7 @@ export const Layout: React.FC<Props> = ({ children, title, fullWidth }) => {
       </Show>
 
       <Sidebar forwardRef={ref} />
-      <Main fullWidth={fullWidth}>
+      <Main fullWidth={fullWidth} id="main-content">
         <Show when={ready}>
           <CrookedTitle>{title}</CrookedTitle>
           <div style={{ marginTop: "25px" }}>{children}</div>

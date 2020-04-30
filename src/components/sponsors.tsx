@@ -1,20 +1,19 @@
 import React from "react";
 import styled from "styled-components";
-import { Card } from "../card";
-import { Link } from "../link";
-import { LaunchPad } from "./launchpad";
-import { OReilly } from "./oreilly";
+import { Card } from "./card";
+import { Link } from "./link";
+import { SponsorImage } from "./sponsor-image";
 
 const sponsorsData = [
   {
     name: "O'Reilly Media",
     link: "https://www.oreilly.com/",
-    image: OReilly,
+    id: "oreilly",
   },
   {
     name: "LaunchPad Huntington",
     link: "https://launchpadhuntington.com/",
-    image: LaunchPad,
+    id: "launchpad",
   },
 ];
 
@@ -23,12 +22,11 @@ export const Sponsors = () => {
     <Card title="Sponsors">
       <Wrapper>
         {sponsorsData.map(sponsor => {
-          const Image = sponsor.image;
           return (
             <li key={sponsor.name}>
               <Link href={sponsor.link}>
                 <SponsorWrapper>
-                  <Image />
+                  <SponsorImage who={sponsor.id} />
                 </SponsorWrapper>
               </Link>
             </li>

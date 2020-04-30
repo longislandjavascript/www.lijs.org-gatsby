@@ -13,6 +13,8 @@ const baseStyles = css`
   border-radius: 6px;
   font-size: 0.8rem;
   color: white;
+  border: 2px solid transparent;
+  transition: border-color 300ms;
 
   ${p => p.theme.small} {
     font-size: 0.9rem;
@@ -25,6 +27,7 @@ const baseStyles = css`
   &:focus {
     background: ${p => p.theme.colors.logoBlue};
     opacity: 0.9;
+    border-color: ${p => p.theme.colors.logoYellow};
   }
 `;
 

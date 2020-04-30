@@ -1,31 +1,29 @@
 import React from "react";
 import styled from "styled-components";
-import { Card } from "../card";
-import { Justin } from "./justin";
-import { Scott } from "./scott";
-import { Mike } from "./mike";
-import { Link } from "../link";
+import { Card } from "./card";
+import { OrganizerImage } from "./organizer-image";
+import { Link } from "./link";
 
 const organizers = [
   {
     name: "Justin Wilkerson",
     link:
       "https://www.meetup.com/long-island-javascript-group/members/50837582/",
-    image: Justin,
+    id: "justin",
   },
   {
     name: "Scott DeVito",
     link:
       "https://www.meetup.com/long-island-javascript-group/members/201990609/",
-    image: Scott,
+    id: "scott",
   },
   {
     name: "Mike Alicea",
     link:
       "https://www.meetup.com/long-island-javascript-group/members/212946534/",
-    image: Mike,
+    id: "mike",
   },
-];
+] as const;
 
 export const Organizers = () => {
   return (
@@ -33,13 +31,12 @@ export const Organizers = () => {
       <Wrapper>
         {organizers.map((organizer, index) => {
           const colors = ["logoPurple", "logoYellow", "logoBlue"];
-          const Image = organizer.image;
           return (
             <li key={organizer.name}>
               <Link href={organizer.link}>
                 <OrganizerWrapper>
                   <Avatar color={colors[index]} aria-hidden={true}>
-                    <Image />
+                    <OrganizerImage who={organizer.id} />
                   </Avatar>
 
                   <p>{organizer.name}</p>
@@ -78,4 +75,5 @@ const Avatar = styled.div<{ color: string }>`
   border: 3px solid ${p => p.theme.colors[p.color]};
   object-fit: scale-down;
   overflow: hidden;
+  margin-bottom: 5px;
 `;
