@@ -30,14 +30,14 @@ h2 {
 }
 
 p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.5;
   font-weight: 500;
 }
 
 p span {
   color: hsla(51, 99%, 45%, 1);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 p,
