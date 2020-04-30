@@ -4,8 +4,8 @@ import { Layout } from "../components/layout";
 import { SEO } from "../components/seo";
 import { MeetupGroup } from "../types";
 import { Card } from "../components/card";
-import { Organizers } from "../components/organizers/organizers";
-import { Sponsors } from "../components/sponsors/sponsors";
+import { Organizers } from "../components/organizers";
+import { Sponsors } from "../components/sponsors";
 import { LocationMap } from "../components/location-map";
 import { AlertBox } from "../components/alert-box";
 
