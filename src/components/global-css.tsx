@@ -37,7 +37,7 @@ p {
 
 p span {
   color: hsla(51, 99%, 45%, 1);
-  font-weight: 700;
+  font-weight: 600;
 }
 
 p,
@@ -112,17 +112,12 @@ textarea {
   font: inherit;
   margin: 0;
 }
-optgroup {
-  font-weight: 700;
-}
+
 button,
 input {
   overflow: visible;
 }
-button,
-select {
-  text-transform: none;
-}
+
 [type="reset"],
 [type="submit"],
 button,

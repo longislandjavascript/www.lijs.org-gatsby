@@ -14,8 +14,6 @@ export const CrookedTitle: React.FC<Props> = ({ as = "h1", children }) => {
     transform: rotate(-4deg);
     margin: 10px 0px 20px 0px;
     text-transform: uppercase;
-    font-family: Helvetica, sans-serif;
-    font-weight: 700;
     box-shadow: 1px 1px 1px ${p => p.theme.colors.textDark};
   `;
   if (as === "h1") {

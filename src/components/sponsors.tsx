@@ -15,7 +15,7 @@ const sponsorsData = [
     link: "https://launchpadhuntington.com/",
     id: "launchpad",
   },
-];
+] as const;
 
 export const Sponsors = () => {
   return (
@@ -49,9 +49,4 @@ const SponsorWrapper = styled.div`
   justify-content: center;
   align-items: center;
   min-width: 150px;
-
-  p {
-    font-weight: 500;
-    margin: 0;
-  }
 `;

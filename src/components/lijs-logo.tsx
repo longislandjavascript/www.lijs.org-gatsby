@@ -10,7 +10,6 @@ const Wrapper = styled.div`
   color: ${p => p.theme.colors.textLight};
 
   span {
-    font-family: Helvetica, sans-serif;
     flex-grow: 0;
     max-width: 180px;
     font-size: ${p => (p.theme.isSmall ? "20px" : "22px")};

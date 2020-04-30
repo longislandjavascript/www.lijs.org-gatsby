@@ -50,7 +50,7 @@ const SidebarLink = styled(Link)`
   margin: 0;
   padding: 10px 20px;
   font-weight: 600;
-  font-size: ${p => (p.theme.isSmall ? "1rem" : ".9rem")};
+  font-size: 1rem;
 
   span {
     padding-left: 10px;
