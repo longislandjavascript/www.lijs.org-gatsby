@@ -44,11 +44,13 @@ export const SEO = ({ description, pathname, meta = [], title }: Props) => {
         {
           rel: "icon",
           sizes: "192x192",
-          href: "/lijs-logo-192.png",
+          href:
+            "https://res.cloudinary.com/gojutin/image/upload/v1588285813/lijs.org/lijs-logo-192.png",
         },
         {
           rel: "apple-touch-icon",
-          href: "/apple-touch-icon.png",
+          href:
+            "https://res.cloudinary.com/gojutin/image/upload/v1588285813/lijs.org/apple-touch-icon.png",
         },
       ]}
       meta={[
