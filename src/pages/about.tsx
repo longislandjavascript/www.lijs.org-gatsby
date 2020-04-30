@@ -18,15 +18,17 @@ const AboutPage: React.FC<Props> = ({ data, location }) => {
   return (
     <Layout title="About Us">
       <SEO title="About LIJS" pathname={location.pathname} />
-      <p>
-        <span>Long Island JavaScript</span> is a group of{" "}
-        <span>
-          {data.meetupGroup.members} {data.meetupGroup.who}
-        </span>{" "}
-        in the Long Island, NY area. We meet on the{" "}
-        <span>last Wednesday of each month</span> , where we discuss a range of
-        topics around the <span>JavaScript ecosystem</span>.
-      </p>
+      <Card>
+        <p>
+          <span>Long Island JavaScript</span> is a group of{" "}
+          <span>
+            {data.meetupGroup.members} {data.meetupGroup.who}
+          </span>{" "}
+          in the Long Island, NY area. We meet on the{" "}
+          <span>last Wednesday of each month</span> , where we discuss a range
+          of topics around the <span>JavaScript ecosystem</span>.
+        </p>
+      </Card>
 
       <Organizers />
 
