@@ -19,7 +19,11 @@ const ContactPage: React.FC<PageProps> = ({ location }) => (
           Don’t fill this out if you're human: <input name="bot-field" />
         </label>
       </p>
-      <select defaultValue="question" aria-label="Contact Reason Select Box">
+      <select
+        defaultValue="question"
+        aria-label="Contact Reason Select Box"
+        name="Reason"
+      >
         <option value="question" disabled={true}>
           I have a question or suggestion
         </option>
@@ -30,6 +34,7 @@ const ContactPage: React.FC<PageProps> = ({ location }) => (
 
       <input
         type="text"
+        name="Name"
         placeholder="Your Name"
         required={true}
         aria-label="Your Name"
@@ -37,12 +42,14 @@ const ContactPage: React.FC<PageProps> = ({ location }) => (
 
       <input
         type="email"
+        name="Email"
         required={true}
         placeholder="Your Email Address"
         aria-label="Your Email"
       />
       <textarea
         rows={8}
+        name="Message"
         placeholder="Your Message"
         required={true}
         aria-label="Your Message"
