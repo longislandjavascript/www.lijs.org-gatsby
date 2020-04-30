@@ -7,6 +7,7 @@ const baseStyles = css`
   padding: 20px;
   border-radius: ${p => p.theme.borderRadius};
   text-decoration: none;
+  cursor: pointer;
   outline: none;
   transition: background-color 300ms;
   &:hover,

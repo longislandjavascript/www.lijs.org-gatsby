@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import * as _ from "styled-components/cssprop";
+import { Helmet } from "react-helmet-async";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../theme";
 import { Header } from "./header";
@@ -46,6 +47,8 @@ export const Layout: React.FC<Props> = ({ children, title, fullWidth }) => {
 
   return (
     <ThemeProvider theme={{ ...theme, isSmall, isSidebarOpen }}>
+      <Helmet htmlAttributes={{ lang: "en" }} />
+
       <Show when={isSmall}>
         <Header
           onRequestOpenSidebar={toggleSidebar}

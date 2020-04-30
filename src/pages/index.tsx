@@ -27,7 +27,7 @@ const IndexPage: React.FC<Props> = ({ data, location }) => {
       <SEO title="Home" pathname={location.pathname} />
       <CountdownClock secondsRemaining={secondsRemaining} />
       <br />
-      <Event data={nextEvent} />
+      <Event data={nextEvent} isNextEvent={true} />
     </Layout>
   );
 };

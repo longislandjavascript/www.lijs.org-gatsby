@@ -3,6 +3,7 @@ import { graphql, PageProps } from "gatsby";
 import { Layout } from "../components/layout";
 import { SEO } from "../components/seo";
 import { Event } from "../components/event";
+import { LinkButton } from "../components/link-button";
 import { MeetupEvent } from "../types";
 
 interface Props extends PageProps {
@@ -20,6 +21,9 @@ const PastEventsPage: React.FC<Props> = ({ data, location }) => {
       {data.allMeetupEvent.nodes.map(event => {
         return <Event key={event.id} data={event} />;
       })}
+      <LinkButton href="https://www.meetup.com/long-island-javascript-group/events/past/">
+        View older events on Meetup
+      </LinkButton>
     </Layout>
   );
 };
