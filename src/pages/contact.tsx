@@ -1,5 +1,5 @@
-import React from "react";
-import { PageProps, navigate } from "gatsby";
+import React, { useState } from "react";
+import { PageProps } from "gatsby";
 import styled from "styled-components";
 import { Layout } from "../components/layout";
 import { SEO } from "../components/seo";
@@ -11,7 +11,7 @@ function encode(data) {
 }
 
 const ContactPage: React.FC<PageProps> = ({ location }) => {
-  const [state, setState] = React.useState({});
+  const [state, setState] = useState({});
 
   const handleChange = e => {
     setState({ ...state, [e.target.name]: e.target.value });
@@ -20,6 +20,7 @@ const ContactPage: React.FC<PageProps> = ({ location }) => {
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.target;
+    console.log(state);
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -27,9 +28,7 @@ const ContactPage: React.FC<PageProps> = ({ location }) => {
         "form-name": form.getAttribute("name"),
         ...state,
       }),
-    })
-      .then(() => navigate(form.getAttribute("action")))
-      .catch(error => alert(error));
+    }).catch(error => alert(error));
   };
 
   return (

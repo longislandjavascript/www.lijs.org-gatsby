@@ -17,4 +17,11 @@ export const LinkButton = styled(Link)`
   @media (max-width: 960px) {
     display: flex;
   }
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: ${p => p.theme.colors.logoBlue};
+    opacity: 0.9;
+  }
 `;
