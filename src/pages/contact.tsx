@@ -1,63 +1,97 @@
 import React from "react";
-import { PageProps } from "gatsby";
+import { PageProps, navigate } from "gatsby";
 import styled from "styled-components";
 import { Layout } from "../components/layout";
 import { SEO } from "../components/seo";
 
-const ContactPage: React.FC<PageProps> = ({ location }) => (
-  <Layout title="Contact Us">
-    <SEO title="Contact Us" pathname={location.pathname} />
-    <Form
-      name="contact"
-      data-netlify="true"
-      method="POST"
-      netlify-honeypot="bot-field"
-    >
-      <input type="hidden" name="form-name" value="contact" />
-      <p className="hidden">
-        <label>
-          Don’t fill this out if you're human: <input name="bot-field" />
-        </label>
-      </p>
-      <select
-        defaultValue="question"
-        aria-label="Contact Reason Select Box"
-        name="Reason"
+function encode(data) {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+}
+
+const ContactPage: React.FC<PageProps> = ({ location }) => {
+  const [state, setState] = React.useState({});
+
+  const handleChange = e => {
+    setState({ ...state, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    const form = e.target;
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": form.getAttribute("name"),
+        ...state,
+      }),
+    })
+      .then(() => navigate(form.getAttribute("action")))
+      .catch(error => alert(error));
+  };
+
+  return (
+    <Layout title="Contact Us">
+      <SEO title="Contact Us" pathname={location.pathname} />
+      <Form
+        name="contact"
+        data-netlify="true"
+        method="POST"
+        netlify-honeypot="bot-field"
+        onSubmit={handleSubmit}
       >
-        <option value="question" disabled={true}>
-          I have a question or suggestion
-        </option>
-        <option value="speaker">I'd like to speak at an LIJS event</option>
-        <option value="sponsor">I'd like to sponsor LIJS</option>
-        <option value="other">Something else</option>
-      </select>
+        <input type="hidden" name="form-name" value="contact" />
+        <p className="hidden">
+          <label>
+            Don’t fill this out if you're human: <input name="bot-field" />
+          </label>
+        </p>
+        <select
+          defaultValue="question"
+          aria-label="Contact Reason Select Box"
+          name="Reason"
+          onChange={handleChange}
+        >
+          <option value="question" disabled={true}>
+            I have a question or suggestion
+          </option>
+          <option value="speaker">I'd like to speak at an LIJS event</option>
+          <option value="sponsor">I'd like to sponsor LIJS</option>
+          <option value="other">Something else</option>
+        </select>
 
-      <input
-        type="text"
-        name="Name"
-        placeholder="Your Name"
-        required={true}
-        aria-label="Your Name"
-      />
+        <input
+          type="text"
+          name="Name"
+          placeholder="Your Name"
+          required={true}
+          aria-label="Your Name"
+          onChange={handleChange}
+        />
 
-      <input
-        type="email"
-        name="Email"
-        required={true}
-        placeholder="Your Email Address"
-        aria-label="Your Email"
-      />
-      <textarea
-        rows={8}
-        name="Message"
-        placeholder="Your Message"
-        required={true}
-        aria-label="Your Message"
-      />
-      <button type="submit">Submit</button>
-    </Form>
-  </Layout>
-);
+        <input
+          type="email"
+          name="Email"
+          required={true}
+          placeholder="Your Email Address"
+          aria-label="Your Email"
+          onChange={handleChange}
+        />
+        <textarea
+          rows={8}
+          name="Message"
+          placeholder="Your Message"
+          required={true}
+          aria-label="Your Message"
+          onChange={handleChange}
+        />
+        <button type="submit">Submit</button>
+      </Form>
+    </Layout>
+  );
+};
 
 const Form = styled.form`
   display: flex;
