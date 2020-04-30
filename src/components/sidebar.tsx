@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import styled from "styled-components";
 import { LIJSLogo } from "./lijs-logo";
@@ -10,7 +10,7 @@ export type SidebarProps = {
   forwardRef: any;
 };
 
-export const Sidebar: React.FC<SidebarProps> = ({ forwardRef }) => {
+const SidebarComponent: React.FC<SidebarProps> = ({ forwardRef }) => {
   return (
     <StyledAside ref={forwardRef}>
       <ul>
@@ -93,3 +93,5 @@ const StyledAside = styled.aside`
     color: ${p => p.theme.colors.logoYellow};
   }
 `;
+
+export const Sidebar = React.memo(SidebarComponent);

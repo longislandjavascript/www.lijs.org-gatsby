@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from "react";
+import * as _ from "styled-components/cssprop";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../theme";
 import { Header } from "./header";
@@ -45,20 +46,20 @@ export const Layout: React.FC<Props> = ({ children, title, fullWidth }) => {
 
   return (
     <ThemeProvider theme={{ ...theme, isSmall, isSidebarOpen }}>
-      <Show when={ready}>
-        <Show when={isSmall}>
-          <Header
-            onRequestOpenSidebar={toggleSidebar}
-            isSidebarOpen={isSidebarOpen}
-          />
-        </Show>
+      <Show when={isSmall}>
+        <Header
+          onRequestOpenSidebar={toggleSidebar}
+          isSidebarOpen={isSidebarOpen}
+        />
+      </Show>
 
-        <Sidebar forwardRef={ref} />
-        <Main fullWidth={fullWidth}>
+      <Sidebar forwardRef={ref} />
+      <Main fullWidth={fullWidth}>
+        <Show when={ready}>
           <CrookedTitle>{title}</CrookedTitle>
           <div style={{ marginTop: "25px" }}>{children}</div>
-        </Main>
-      </Show>
+        </Show>
+      </Main>
     </ThemeProvider>
   );
 };

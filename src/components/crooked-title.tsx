@@ -12,7 +12,6 @@ export const CrookedTitle: React.FC<Props> = ({
   return (
     <h2
       className="title"
-      // @ts-ignore
       css={css`
         display: inline-block;
         color: ${p => p.theme.colors.textDark};

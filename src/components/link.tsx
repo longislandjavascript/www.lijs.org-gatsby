@@ -45,7 +45,6 @@ export const Link: React.FC<Props> = ({
     return (
       <a
         href={href}
-        // @ts-ignore
         css={baseStyles}
         target="_blank"
         rel="noopener noreferrer"
