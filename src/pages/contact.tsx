@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import { navigate } from "gatsby-link";
+import { AtomSpinner } from "react-epic-spinners";
 import styled from "styled-components";
 import { Layout } from "../components/layout";
 import { SEO } from "../components/seo";
@@ -11,26 +13,64 @@ const reasons = [
   ["other", "Something else."],
 ];
 
+function encode(data) {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+}
+
 const ContactPage = () => {
+  const [state, setState] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+
+  function handleChange(e) {
+    setState({ ...state, [e.target.name]: e.target.value });
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setLoading(true);
+    setError(false);
+    const form = e.target;
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": form.getAttribute("name"),
+        ...state,
+      }),
+    })
+      .then(() => navigate(form.getAttribute("action")))
+      .catch(() => {
+        setError(true);
+        setLoading(false);
+      });
+  }
+
   return (
     <Layout title="Contact Us">
       <SEO title="Contact Us" />
       <Form
         name="contact"
+        method="post"
+        action="/thanks/"
         data-netlify="true"
-        method="POST"
-        netlify-honeypot="bot-field"
+        data-netlify-honeypot="bot-field"
+        onSubmit={handleSubmit}
       >
         <input type="hidden" name="form-name" value="contact" />
         <p className="hidden">
           <label>
-            Don’t fill this out if you're human: <input name="bot-field" />
+            Don’t fill this out if you're human:{" "}
+            <input name="bot-field" onChange={handleChange} />
           </label>
         </p>
         <select
           defaultValue="presenter"
           aria-label="Contact Reason Select Box"
-          name="Reason"
+          name="reason"
+          onChange={handleChange}
         >
           {reasons.map(reason => {
             const [value, label] = reason;
@@ -44,7 +84,8 @@ const ContactPage = () => {
 
         <input
           type="text"
-          name="Name"
+          name="name"
+          onChange={handleChange}
           placeholder="Your Name"
           required={true}
           aria-label="Your Name"
@@ -52,19 +93,33 @@ const ContactPage = () => {
 
         <input
           type="email"
-          name="Email"
+          name="email"
+          onChange={handleChange}
           required={true}
           placeholder="Your Email Address"
           aria-label="Your Email"
         />
         <textarea
           rows={8}
-          name="Message"
+          name="message"
+          onChange={handleChange}
           placeholder="Your Message"
           required={true}
           aria-label="Your Message"
         />
-        <Button type="submit">Submit</Button>
+        <Button type="submit">
+          {loading ? (
+            <AtomSpinner color="hsl(202, 100%, 20%)" size={30} />
+          ) : (
+            "Submit"
+          )}
+        </Button>
+        {error && (
+          <p>
+            Oops..something went wrong. Please try again or contact us directly
+            on the Meetup website. Sorry about that!
+          </p>
+        )}
       </Form>
     </Layout>
   );
