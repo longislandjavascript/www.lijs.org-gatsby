@@ -24,7 +24,7 @@ const IndexPage: React.FC<Props> = ({ data }) => {
 
   return (
     <Layout title="Next Event">
-      <SEO title="Home" />
+      <SEO />
       <CountdownClock secondsRemaining={secondsRemaining} />
       <br />
       <Event data={nextEvent} isNextEvent={true} />
