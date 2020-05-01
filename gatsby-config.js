@@ -21,6 +21,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-next-seo`,
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-styled-components`,
     {
