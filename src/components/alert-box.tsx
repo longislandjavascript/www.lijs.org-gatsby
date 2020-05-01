@@ -1,26 +1,28 @@
 import React from "react";
 import styled from "styled-components";
-import { FaExclamationTriangle } from "react-icons/fa";
+import { IoMdMedical } from "react-icons/io";
 
 const StyledAlertBox = styled.div`
   display: flex;
-  align-items: center;
-  padding: 10px 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px 20px 0px 20px;
   background: ${p => p.theme.colors.blueDarkest};
   border-radius: ${p => p.theme.borderRadius};
   color: ${p => p.theme.colors.logoYellow};
-  span {
-    padding-left: 10px;
+  p {
     font-size: 0.9rem;
-    font-weight: 500;
+    font-weight: 600;
+    color: ${p => p.theme.colors.logoYellow};
+    margin-top: 10px;
   }
 `;
 
 export const AlertBox: React.FC = ({ children }) => {
   return (
     <StyledAlertBox>
-      <FaExclamationTriangle />
-      <span>{children}</span>
+      <IoMdMedical />
+      <p>{children}</p>
     </StyledAlertBox>
   );
 };

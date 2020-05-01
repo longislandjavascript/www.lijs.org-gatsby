@@ -27,9 +27,7 @@
     "react-icons": "^3.10.0",
     "react-player": "^2.0.1",
     "styled-components": "^5.1.0",
-    "typeface-heebo": "^0.0.72",
-    "typeface-manrope": "^1.0.0",
-    "typeface-rubik": "^0.0.72"
+    "typeface-roboto": "^0.0.75"
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.0",

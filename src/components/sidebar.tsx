@@ -52,10 +52,10 @@ const SidebarLink = styled(Link)`
   display: flex;
   align-items: center;
   border-radius: 0 3em 3em 0;
-  margin: 0;
   padding: 10px 20px;
   font-weight: 600;
   font-size: 1rem;
+  margin: 1px 0px;
 
   ${p => p.theme.small} {
     margin: 2px 0px;
