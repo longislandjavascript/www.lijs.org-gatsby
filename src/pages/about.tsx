@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql, PageProps } from "gatsby";
+import { graphql } from "gatsby";
 import { Layout } from "../components/layout";
 import { SEO } from "../components/seo";
 import { MeetupGroup } from "../types";
@@ -9,15 +9,15 @@ import { Sponsors } from "../components/sponsors";
 import { LocationMap } from "../components/location-map";
 import { AlertBox } from "../components/alert-box";
 
-interface Props extends PageProps {
+interface Props {
   data: {
     meetupGroup: Pick<MeetupGroup, "members" | "who">;
   };
 }
-const AboutPage: React.FC<Props> = ({ data, location }) => {
+const AboutPage: React.FC<Props> = ({ data }) => {
   return (
     <Layout title="About Us">
-      <SEO title="About LIJS" pathname={location.pathname} />
+      <SEO title="About LIJS" />
       <Card>
         <p>
           <span>Long Island JavaScript</span> is a group of{" "}

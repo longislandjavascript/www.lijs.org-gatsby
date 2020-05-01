@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql, PageProps } from "gatsby";
+import { graphql } from "gatsby";
 import { Layout } from "../components/layout";
 import { SEO } from "../components/seo";
 import { Event } from "../components/event";
@@ -8,7 +8,7 @@ import { LinkButton } from "../components/link-button";
 import { MeetupEvent } from "../types";
 import { FaMeetup } from "react-icons/fa";
 
-interface Props extends PageProps {
+interface Props {
   data: {
     allMeetupEvent: {
       nodes: MeetupEvent[];
@@ -16,10 +16,10 @@ interface Props extends PageProps {
   };
 }
 
-const PastEventsPage: React.FC<Props> = ({ data, location }) => {
+const PastEventsPage: React.FC<Props> = ({ data }) => {
   return (
     <Layout title="Past Events">
-      <SEO title="Past Events" pathname={location.pathname} />
+      <SEO title="Past Events" />
       {data.allMeetupEvent.nodes.map(event => {
         return <Event key={event.id} data={event} />;
       })}

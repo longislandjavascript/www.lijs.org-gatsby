@@ -1,13 +1,12 @@
 import React from "react";
-import { PageProps } from "gatsby";
 import { Layout } from "../components/layout";
 import { SEO } from "../components/seo";
 import { Card } from "../components/card";
 
-const CodeOfConduct: React.FC<PageProps> = ({ location }) => {
+const CodeOfConduct = () => {
   return (
     <Layout title="Code of Conduct">
-      <SEO title="Code of Conduct" pathname={location.pathname} />
+      <SEO title="Code of Conduct" />
       <Card>
         <p>
           Long Island JavaScript Meetup events are dedicated to providing a{" "}

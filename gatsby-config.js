@@ -36,12 +36,26 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Long Island JavaScript Meetup`,
-        short_name: `starter`,
+        short_name: `LIJS`,
+        description: `Fluky.dev | Resources for front end developers.`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        lang: "en",
+        background_color: `#00304D`,
+        theme_color: `#0066CC`,
         display: `minimal-ui`,
-        icon: `src/images/lijs-logo.png`, // This path is relative to the root of the site.
+        icon: "src/images/lijs-logo.png",
+        icons: [
+          {
+            src: "lijs-logo-512.png",
+            sizes: "512x512",
+            types: "image/png",
+          },
+          {
+            src: "lijs-logo-192.png",
+            sizes: "192x192",
+            types: "image/png",
+          },
+        ],
       },
     },
     {

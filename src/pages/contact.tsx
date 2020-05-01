@@ -1,20 +1,13 @@
-import React, { useState } from "react";
-import { PageProps } from "gatsby";
+import React from "react";
 import styled from "styled-components";
 import { Layout } from "../components/layout";
 import { SEO } from "../components/seo";
 import { Button } from "../components/button";
 
-function encode(data) {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
-}
-
-const ContactPage: React.FC<PageProps> = ({ location }) => {
+const ContactPage = () => {
   return (
     <Layout title="Contact Us">
-      <SEO title="Contact Us" pathname={location.pathname} />
+      <SEO title="Contact Us" />
       <Form
         name="contact"
         data-netlify="true"

@@ -1,5 +1,4 @@
 import React from "react";
-import { PageProps } from "gatsby";
 import styled from "styled-components";
 import { Layout } from "../components/layout";
 import { SEO } from "../components/seo";
@@ -24,10 +23,10 @@ const FAQList = styled.div`
   margin: 0;
 `;
 
-const FAQPage: React.FC<PageProps> = ({ location }) => {
+const FAQPage = () => {
   return (
     <Layout title="FAQ">
-      <SEO title="FAQ" pathname={location.pathname} />
+      <SEO title="FAQ" />
 
       <FAQList>
         {faqs.map(({ question, answer }) => {

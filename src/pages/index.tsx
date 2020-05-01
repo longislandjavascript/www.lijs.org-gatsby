@@ -1,12 +1,12 @@
 import React from "react";
-import { graphql, PageProps } from "gatsby";
+import { graphql } from "gatsby";
 import { Layout } from "../components/layout";
 import { SEO } from "../components/seo";
 import { Event } from "../components/event";
 import { CountdownClock } from "../components/countdown-clock";
 import { MeetupEvent } from "../types";
 
-interface Props extends PageProps {
+interface Props {
   data: {
     allMeetupEvent: {
       nodes: MeetupEvent[];
@@ -14,7 +14,7 @@ interface Props extends PageProps {
   };
 }
 
-const IndexPage: React.FC<Props> = ({ data, location }) => {
+const IndexPage: React.FC<Props> = ({ data }) => {
   const nextEvent = data.allMeetupEvent.nodes[0];
 
   // const secondsRemaining =
@@ -24,7 +24,7 @@ const IndexPage: React.FC<Props> = ({ data, location }) => {
 
   return (
     <Layout title="Next Event">
-      <SEO title="Home" pathname={location.pathname} />
+      <SEO title="Home" />
       <CountdownClock secondsRemaining={secondsRemaining} />
       <br />
       <Event data={nextEvent} isNextEvent={true} />

@@ -23,7 +23,7 @@ type Props = {
   href?: string;
   className?: string;
   activeClassName?: string;
-  tabIndex: number;
+  tabIndex?: number;
 };
 export const Link: React.FC<Props> = ({
   to,
@@ -31,7 +31,7 @@ export const Link: React.FC<Props> = ({
   children,
   className,
   activeClassName,
-  tabIndex,
+  tabIndex = 0,
 }) => {
   if (to) {
     return (
