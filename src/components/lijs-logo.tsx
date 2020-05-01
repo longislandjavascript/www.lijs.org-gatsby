@@ -8,14 +8,21 @@ const Wrapper = styled.div`
   align-items: center;
   padding: 0px 20px;
   color: ${p => p.theme.colors.textLight};
+  ${p => p.theme.small} {
+    padding: 0px 10px;
+  }
 
   span {
     flex-grow: 0;
     max-width: 180px;
-    font-size: ${p => (p.theme.isSmall ? "20px" : "22px")};
+    font-size: 22px;
     font-weight: 600;
     line-height: 1.2;
     margin-left: 10px;
+
+    ${p => p.theme.small} {
+      font-size: 21px;
+    }
   }
 `;
 
@@ -37,7 +44,7 @@ export const LIJSLogo: React.FC<Props> = ({ type }) => {
 
       headerLogo: file(relativePath: { eq: "lijs-logo.png" }) {
         childImageSharp {
-          fixed(width: 50) {
+          fixed(width: 55) {
             ...GatsbyImageSharpFixed
           }
         }

@@ -47,7 +47,7 @@ const StyledMenuItemButton = styled.button`
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  padding: 15px;
+  padding: 12px;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -69,7 +69,7 @@ const MenuButton = ({ onClick, id, isSidebarOpen }: MenuButtonProps) => {
       aria-pressed={isSidebarOpen}
       aria-label="Menu Toggle"
     >
-      <Icon size={24} style={{ pointerEvents: "none" }} />
+      <Icon size={22} style={{ pointerEvents: "none" }} />
     </StyledMenuItemButton>
   );
 };
