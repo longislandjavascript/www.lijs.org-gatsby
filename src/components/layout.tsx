@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from "react";
+import styled from "styled-components";
 import * as _ from "styled-components/cssprop";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../theme";
@@ -58,6 +59,9 @@ export const Layout: React.FC<Props> = ({ children, title, fullWidth }) => {
       </Show>
 
       <Sidebar forwardRef={ref} isOpen={isSidebarOpen} />
+
+      {isSidebarOpen && <Overlay />}
+
       <Main fullWidth={fullWidth} id="main-content">
         <Show when={ready}>
           <CrookedTitle>{title}</CrookedTitle>
@@ -67,3 +71,14 @@ export const Layout: React.FC<Props> = ({ children, title, fullWidth }) => {
     </ThemeProvider>
   );
 };
+
+const Overlay = styled.div`
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  overflow: hidden;
+`;
