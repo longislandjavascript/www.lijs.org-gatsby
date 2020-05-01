@@ -55,8 +55,7 @@ const SidebarLink = styled(Link)`
   font-size: 1rem;
 
   ${p => p.theme.small} {
-    margin: 5px 0px;
-    font-size: 1.1rem;
+    margin: 3px 0px;
   }
 
   span {

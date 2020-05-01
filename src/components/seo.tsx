@@ -63,28 +63,28 @@ export const SEO = ({ description, pathname, title }: Props) => {
           property: `og:type`,
           content: `website`,
         },
+        // {
+        //   property: `og:image`,
+        //   content: `https://res.cloudinary.com/gojutin/image/upload/v1588207007/lijs.org/lijs-logo.png`,
+        // },
         {
-          property: `og:image`,
-          content: `https://res.cloudinary.com/gojutin/image/upload/v1588207007/lijs.org/lijs-logo.png`,
-        },
-        {
-          property: `twitter:card`,
+          name: `twitter:card`,
           content: `summary`,
         },
+        // {
+        //   name: `twitter:image`,
+        //   content: `https://res.cloudinary.com/gojutin/image/upload/v1588207007/lijs.org/lijs-logo.png`,
+        // },
         {
-          property: `twitter:image`,
-          content: `https://res.cloudinary.com/gojutin/image/upload/v1588207007/lijs.org/lijs-logo.png`,
-        },
-        {
-          property: `twitter:creator`,
+          name: `twitter:creator`,
           content: site.siteMetadata.author,
         },
         {
-          property: `twitter:title`,
+          name: `twitter:title`,
           content: title,
         },
         {
-          property: `twitter:description`,
+          name: `twitter:description`,
           content: metaDescription,
         },
       ]}

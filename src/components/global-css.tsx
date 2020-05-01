@@ -32,7 +32,7 @@ h2 {
 p {
   font-size: 1.1rem;
   line-height: 1.5;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 p span {
