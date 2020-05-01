@@ -17,7 +17,10 @@ interface Props {
 const AboutPage: React.FC<Props> = ({ data }) => {
   return (
     <Layout title="About Us">
-      <SEO title="About Long Island JavaScript Meetup" />
+      <SEO
+        title="About Long Island JavaScript Meetup"
+        description="Everything you want to know about the Long Island JavaScript Meetup."
+      />
       <Card>
         <p>
           <span>Long Island JavaScript</span> is a group of{" "}

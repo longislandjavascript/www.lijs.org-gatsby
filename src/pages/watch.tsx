@@ -15,7 +15,10 @@ const WatchPage = () => {
   const { height } = useWindowSize();
   return (
     <Layout title="Watch Now" fullWidth={true}>
-      <SEO title="Watch Now" />
+      <SEO
+        title="Watch Now"
+        description="Watch the Long Island JavaScript Twitch stream now."
+      />
       <Show when={!isReady}>
         <SpinnerOverlay>
           <AtomSpinner color="hsl(202, 100%, 20%)" size={200} />

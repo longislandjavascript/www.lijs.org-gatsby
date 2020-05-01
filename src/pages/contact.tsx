@@ -50,7 +50,10 @@ const ContactPage = () => {
 
   return (
     <Layout title="Contact Us">
-      <SEO title="Contact Us" />
+      <SEO
+        title="Contact Us"
+        description="Have a question or suggestion for our group? Interested in presenting a talk or sponsoring us? Get in touch. We'd love to chat."
+      />
       <Form
         name="contact"
         method="post"

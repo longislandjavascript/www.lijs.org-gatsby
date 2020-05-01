@@ -19,7 +19,10 @@ interface Props {
 const PastEventsPage: React.FC<Props> = ({ data }) => {
   return (
     <Layout title="Past Events">
-      <SEO title="Past Events" />
+      <SEO
+        title="Past Events"
+        description="We've been learning about JavaScript together since 2015. Take a look at our past events at all the ground we covered."
+      />
       {data.allMeetupEvent.nodes.map(event => {
         return <Event key={event.id} data={event} />;
       })}

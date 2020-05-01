@@ -26,7 +26,10 @@ const FAQList = styled.div`
 const FAQPage = () => {
   return (
     <Layout title="FAQ">
-      <SEO title="FAQ" />
+      <SEO
+        title="Frequently Asked Questions"
+        description="Everything you want to know about the Long Island JavaScript Meetup."
+      />
 
       <FAQList>
         {faqs.map(({ question, answer }) => {
