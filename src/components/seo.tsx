@@ -35,7 +35,7 @@ export const SEO = ({ description, pathname, title }: Props) => {
     <Helmet
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
-      htmlAttributes={{ lang: "en" }}
+      // htmlAttributes={{ lang: "en" }}
       link={[
         {
           rel: "canonical",
