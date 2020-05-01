@@ -11,6 +11,7 @@ import { CrookedTitle } from "./crooked-title";
 import { useClickOutside } from "../hooks/use-click-outside";
 import { useWindowSize } from "react-hooks-window-size";
 import { GlobalCss } from "./global-css";
+import "typeface-heebo";
 
 type Props = {
   title: string;
@@ -55,7 +56,7 @@ export const Layout: React.FC<Props> = ({ children, title, fullWidth }) => {
         />
       </Show>
 
-      <Sidebar forwardRef={ref} />
+      <Sidebar forwardRef={ref} isOpen={isSidebarOpen} />
       <Main fullWidth={fullWidth} id="main-content">
         <Show when={ready}>
           <CrookedTitle>{title}</CrookedTitle>

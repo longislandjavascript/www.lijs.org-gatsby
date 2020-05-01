@@ -8,9 +8,10 @@ import { links } from "../data/sidebar-links";
 
 export type SidebarProps = {
   forwardRef: any;
+  isOpen: boolean;
 };
 
-const SidebarComponent: React.FC<SidebarProps> = ({ forwardRef }) => {
+export const Sidebar: React.FC<SidebarProps> = ({ forwardRef, isOpen }) => {
   return (
     <StyledAside ref={forwardRef}>
       <ul>
@@ -25,6 +26,7 @@ const SidebarComponent: React.FC<SidebarProps> = ({ forwardRef }) => {
           return (
             <li key={label}>
               <SidebarLink
+                tabIndex={isOpen ? 0 : -1}
                 to={isAnchor ? null : to}
                 href={isAnchor ? to : null}
                 activeClassName="active-nav-link"
@@ -51,6 +53,11 @@ const SidebarLink = styled(Link)`
   padding: 10px 20px;
   font-weight: 600;
   font-size: 1rem;
+
+  ${p => p.theme.small} {
+    margin: 5px 0px;
+    font-size: 1.1rem;
+  }
 
   span {
     padding-left: 10px;
@@ -80,6 +87,7 @@ const StyledAside = styled.aside`
       display: none;
     }
   }
+
   ul {
     margin-top: 10px;
   }
@@ -94,4 +102,4 @@ const StyledAside = styled.aside`
   }
 `;
 
-export const Sidebar = React.memo(SidebarComponent);
+// export const Sidebar = React.memo(SidebarComponent);

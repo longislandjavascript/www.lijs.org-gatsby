@@ -23,6 +23,7 @@ type Props = {
   href?: string;
   className?: string;
   activeClassName?: string;
+  tabIndex: number;
 };
 export const Link: React.FC<Props> = ({
   to,
@@ -30,6 +31,7 @@ export const Link: React.FC<Props> = ({
   children,
   className,
   activeClassName,
+  tabIndex,
 }) => {
   if (to) {
     return (
@@ -38,6 +40,7 @@ export const Link: React.FC<Props> = ({
         css={baseStyles}
         className={className}
         activeClassName={activeClassName}
+        tabIndex={tabIndex}
       >
         {children}
       </GatsbyLink>
@@ -50,6 +53,7 @@ export const Link: React.FC<Props> = ({
         target="_blank"
         rel="noopener noreferrer"
         className={className}
+        tabIndex={tabIndex}
       >
         {children}
       </a>

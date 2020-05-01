@@ -25,7 +25,10 @@
     "react-hooks-window-size": "^0.2.2",
     "react-icons": "^3.10.0",
     "react-player": "^2.0.1",
-    "styled-components": "^5.1.0"
+    "styled-components": "^5.1.0",
+    "typeface-heebo": "^0.0.72",
+    "typeface-manrope": "^1.0.0",
+    "typeface-rubik": "^0.0.72"
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.0",

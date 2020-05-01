@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalCss = createGlobalStyle`
 html {
-  font-family: Helvetica, Arial, Sans-Serif;
+  font-family: "Heebo", Helvetica, Arial, Sans-Serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   box-sizing: border-box;

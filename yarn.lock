@@ -12861,6 +12861,21 @@ typedarray@^0.0.6:
   resolved "https://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
+typeface-heebo@^0.0.72:
+  version "0.0.72"
+  resolved "https://registry.npmjs.org/typeface-heebo/-/typeface-heebo-0.0.72.tgz#7f449615830919d0a2e46c53ef0f45af7a36160a"
+  integrity sha512-Yp/o0gw0u1WYq3m8R1VOMOpc8XzP8cJcp1TKQ6EQPNPk6R8HYOpINJ/BJHwKeFP3uDFNHjP3zeHeToefcnc3iA==
+
+typeface-manrope@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/typeface-manrope/-/typeface-manrope-1.0.0.tgz#a903b712ecc0f208ff00778d98898e8029dfb60f"
+  integrity sha512-6SUkk4TbruWxhIB/SSpdGuJnZXLQ+thfELkYnqfu2r/u4offq3Ym6qTuyZbVuPvG0xrwJse8hhZff86JqcKR+Q==
+
+typeface-rubik@^0.0.72:
+  version "0.0.72"
+  resolved "https://registry.npmjs.org/typeface-rubik/-/typeface-rubik-0.0.72.tgz#85d028dc66e8388a941f8c7ce194fad963d1824e"
+  integrity sha512-dRJrtCEHfY3e39zq/U4JpFPVVbEogpDKCGnS70sXur253gnrwunjai26KCZbwdF3NEdMAYMTBu4CIn3hJp4xSA==
+
 unbzip2-stream@^1.0.9:
   version "1.4.2"
   resolved "https://registry.npmjs.org/unbzip2-stream/-/unbzip2-stream-1.4.2.tgz#84eb9e783b186d8fb397515fbb656f312f1a7dbf"

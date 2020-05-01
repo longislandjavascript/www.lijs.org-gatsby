@@ -33,6 +33,7 @@ const TimeUnit = styled.div`
     padding: 0;
     margin: 0;
     line-height: 1.2;
+    font-weight: 800;
   }
   .time-value {
     font-size: 2rem;
