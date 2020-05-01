@@ -29,17 +29,19 @@ const TimeUnit = styled.div`
   width: 60px;
 
   p {
-    font-size: 14px;
+    font-size: 12px;
     padding: 0;
     margin: 0;
     line-height: 1.2;
-    font-weight: 800;
+    font-weight: 500;
+    text-transform: uppercase;
   }
   .time-value {
     font-size: 2rem;
     color: ${p => p.theme.colors.logoYellow};
     padding: 0;
     margin: 0;
+    font-weight: 800;
   }
 `;
 
