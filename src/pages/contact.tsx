@@ -4,6 +4,13 @@ import { Layout } from "../components/layout";
 import { SEO } from "../components/seo";
 import { Button } from "../components/button";
 
+const reasons = [
+  ["question", "I have a question or suggestion."],
+  ["presenter", "I'd like to propose a talk."],
+  ["sponsor", "I'd like to sponsor the group."],
+  ["other", "Something else."],
+];
+
 const ContactPage = () => {
   return (
     <Layout title="Contact Us">
@@ -21,16 +28,18 @@ const ContactPage = () => {
           </label>
         </p>
         <select
-          defaultValue="question"
+          defaultValue="presenter"
           aria-label="Contact Reason Select Box"
           name="Reason"
         >
-          <option value="question" disabled={true}>
-            I have a question or suggestion
-          </option>
-          <option value="speaker">I'd like to speak at an LIJS event</option>
-          <option value="sponsor">I'd like to sponsor LIJS</option>
-          <option value="other">Something else</option>
+          {reasons.map(reason => {
+            const [value, label] = reason;
+            return (
+              <option key={label} value={value}>
+                {label}
+              </option>
+            );
+          })}
         </select>
 
         <input
@@ -65,6 +74,7 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   width: 100%;
+  max-width: 500px;
   margin: 0px;
   input,
   select,

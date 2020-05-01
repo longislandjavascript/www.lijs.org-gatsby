@@ -11,7 +11,10 @@ export type SidebarProps = {
   isOpen: boolean;
 };
 
-export const Sidebar: React.FC<SidebarProps> = ({ forwardRef, isOpen }) => {
+export const SidebarComponent: React.FC<SidebarProps> = ({
+  forwardRef,
+  isOpen,
+}) => {
   return (
     <StyledAside ref={forwardRef}>
       <ul>
@@ -55,7 +58,7 @@ const SidebarLink = styled(Link)`
   font-size: 1rem;
 
   ${p => p.theme.small} {
-    margin: 3px 0px;
+    margin: 2px 0px;
   }
 
   span {
@@ -67,7 +70,7 @@ const SidebarLink = styled(Link)`
 const StyledAside = styled.aside`
   width: ${p => p.theme.sidebarWidth}px;
   overflow: scroll;
-  padding: 10px 10px 100px 10px;
+  padding: 10px 10px 50px 10px;
   background: ${p => p.theme.colors.blueDark};
   position: fixed;
   top: 0;
@@ -75,7 +78,7 @@ const StyledAside = styled.aside`
   left: ${p => (p.theme.isSidebarOpen ? 0 : "-100%")};
   transition: left 300ms ease-in-out;
   z-index: 9999;
-  /* box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.2); */
+
   .logo {
     display: block;
   }
@@ -85,6 +88,7 @@ const StyledAside = styled.aside`
     .logo {
       display: none;
     }
+    box-shadow: 4px 0 8px -2px rgba(255, 255, 255, 0.2);
   }
 
   ul {
@@ -101,4 +105,4 @@ const StyledAside = styled.aside`
   }
 `;
 
-// export const Sidebar = React.memo(SidebarComponent);
+export const Sidebar = React.memo(SidebarComponent);

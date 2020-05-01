@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { LIJSLogo } from "./lijs-logo";
-import { RiMenu4Line } from "react-icons/ri";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const StyledHeader = styled.header`
   position: fixed;
@@ -47,9 +47,10 @@ const StyledMenuItemButton = styled.button`
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  padding: 10px;
+  padding: 15px;
   background: transparent;
   border: none;
+  cursor: pointer;
   transition: background-color 300ms;
   outline: none;
   &:hover,
@@ -59,6 +60,7 @@ const StyledMenuItemButton = styled.button`
 `;
 
 const MenuButton = ({ onClick, id, isSidebarOpen }: MenuButtonProps) => {
+  const Icon = isSidebarOpen ? FaTimes : FaBars;
   return (
     <StyledMenuItemButton
       id={id}
@@ -67,7 +69,7 @@ const MenuButton = ({ onClick, id, isSidebarOpen }: MenuButtonProps) => {
       aria-pressed={isSidebarOpen}
       aria-label="Menu Toggle"
     >
-      <RiMenu4Line size={24} style={{ pointerEvents: "none" }} />
+      <Icon size={24} style={{ pointerEvents: "none" }} />
     </StyledMenuItemButton>
   );
 };

@@ -6,10 +6,11 @@ export const baseButtonStyles = css`
   justify-content: center;
   background: ${p => p.theme.colors.logoBlue};
   font-weight: 600;
-  height: 38px;
+  /* height: 40px; */
   padding: 8px 10px;
   border-radius: 6px;
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 1.3;
   color: white;
   border: 2px solid transparent;
   transition: border-color 300ms;
