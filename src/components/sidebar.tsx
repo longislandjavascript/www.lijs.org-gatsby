@@ -92,7 +92,7 @@ const StyledAside = styled.aside`
     bottom: 0;
     right: 0;
     width: 100%;
-    top: ${p => (p.theme.isSidebarOpen ? `${p.theme.headerHeight}px` : "100%")};
+    top: ${p => (p.theme.isSidebarOpen ? `${p.theme.headerHeight}px` : "110%")};
     .logo {
       display: none;
     }
