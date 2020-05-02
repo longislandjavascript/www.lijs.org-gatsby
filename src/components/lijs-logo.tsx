@@ -44,7 +44,7 @@ export const LIJSLogo: React.FC<Props> = ({ type }) => {
     query {
       sidebarLogo: file(relativePath: { eq: "lijs-logo.png" }) {
         childImageSharp {
-          fixed(width: 80) {
+          fixed(width: 70) {
             ...GatsbyImageSharpFixed
           }
         }
