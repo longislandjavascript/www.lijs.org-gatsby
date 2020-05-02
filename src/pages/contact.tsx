@@ -32,13 +32,21 @@ function encode(data) {
 }
 
 const ContactPage = () => {
-  const [state, setState] = useState({});
+  const [state, setState] = useState({
+    reason: "",
+    name: "",
+    email: "",
+    message: "",
+  });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const recaptchaRef = useRef();
 
   function handleChange(e) {
-    setState(prevState => ({ ...prevState, [e.target.name]: e.target.value }));
+    setState(prevState => ({
+      ...prevState,
+      [e.currentTarget.name]: e.currentTarget.value,
+    }));
   }
 
   function handleSubmit(e) {
