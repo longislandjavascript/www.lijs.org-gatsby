@@ -59,6 +59,7 @@ const SidebarLink = styled(Link)`
 
   ${p => p.theme.small} {
     margin: 4px 0px;
+    border-radius: 0;
   }
 
   span {
@@ -76,7 +77,7 @@ const StyledAside = styled.aside`
   top: 0;
   bottom: 0;
   left: ${p => (p.theme.isSidebarOpen ? 0 : "-100%")};
-  transition: left 300ms ease-in-out;
+  transition: top 300ms ease-in-out, left 300ms ease-in-out;
   z-index: 9999;
 
   .logo {
@@ -84,8 +85,14 @@ const StyledAside = styled.aside`
   }
 
   ${p => p.theme.small} {
+    
     padding: 10px 10px 30px 10px;
-    top: ${p => p.theme.headerHeight}px;
+    /* top: ${p => p.theme.headerHeight}px; */
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    top: ${p => (p.theme.isSidebarOpen ? `${p.theme.headerHeight}px` : "100%")};
     .logo {
       display: none;
     }
@@ -100,6 +107,9 @@ const StyledAside = styled.aside`
     padding: 0;
     margin: 0;
     margin-left: -10px;
+    ${p => p.theme.small} {
+      margin-right: -10px;
+    }
   }
   .active-nav-link {
     color: ${p => p.theme.colors.logoYellow};

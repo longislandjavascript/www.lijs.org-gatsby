@@ -60,8 +60,6 @@ export const Layout: React.FC<Props> = ({ children, title, fullWidth }) => {
 
       <Sidebar forwardRef={ref} isOpen={isSidebarOpen} />
 
-      {isSidebarOpen && isSmall && <Overlay />}
-
       <Main fullWidth={fullWidth} id="main-content">
         <Show when={ready}>
           <CrookedTitle>{title}</CrookedTitle>
@@ -71,14 +69,3 @@ export const Layout: React.FC<Props> = ({ children, title, fullWidth }) => {
     </ThemeProvider>
   );
 };
-
-const Overlay = styled.div`
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(255, 255, 255, 0.2);
-  z-index: 999;
-  overflow: hidden;
-`;
