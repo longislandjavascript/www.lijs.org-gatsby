@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Long Island JavaScript Meetup`,
-    description: `Welcome to Long Island JavaScript Meetup! We meet on the last Wednesday of each month and discuss all things JavaScript.`,
+    title: `Long Island JavaScript`,
+    description: `Welcome to the Long Island JavaScript Meetup! We meet on the last Wednesday of each month to discuss all things JavaScript.`,
     author: `@gojutin`,
     siteUrl: "https://www.lijs.org",
     keywords: [
@@ -36,9 +36,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Long Island JavaScript Meetup`,
+        name: `Long Island JavaScript`,
         short_name: `LIJS`,
-        description: `Fluky.dev | Resources for front end developers.`,
+        description: `Welcome to the Long Island JavaScript Meetup! We meet on the last Wednesday of each month to discuss all things JavaScript.`,
         start_url: `/`,
         lang: "en",
         background_color: `#00304D`,
@@ -62,7 +62,7 @@ module.exports = {
     {
       resolve: `gatsby-source-meetup`,
       options: {
-        groupUrlName: "long-island-javascript-group",
+        groupUrlName: "long-island-javascript",
         eventsOptions: [
           {
             status: `upcoming`,

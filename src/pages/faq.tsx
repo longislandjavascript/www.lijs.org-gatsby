@@ -28,7 +28,7 @@ const FAQPage = () => {
     <Layout title="FAQ">
       <SEO
         title="Frequently Asked Questions"
-        description="Everything you want to know about the Long Island JavaScript Meetup."
+        description="You have questions. And hopefully we have your answer. If not, please feel free to contact us."
       />
 
       <FAQList>

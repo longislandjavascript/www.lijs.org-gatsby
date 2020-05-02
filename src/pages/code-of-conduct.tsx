@@ -6,7 +6,10 @@ import { Card } from "../components/card";
 const CodeOfConduct = () => {
   return (
     <Layout title="Code of Conduct">
-      <SEO title="Code of Conduct" />
+      <SEO
+        title="Code of Conduct"
+        description="Long Island JavaScript Meetup events are dedicated to providing a harassment-free experience for everyone. Please review our Code of Conduct for more information."
+      />
       <Card>
         <p>
           Long Island JavaScript Meetup events are dedicated to providing a{" "}

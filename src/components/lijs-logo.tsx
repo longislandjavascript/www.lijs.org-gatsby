@@ -15,14 +15,22 @@ const Wrapper = styled.div`
   span {
     flex-grow: 0;
     max-width: 180px;
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 600;
     line-height: 1.2;
     margin-left: 10px;
 
     ${p => p.theme.small} {
       font-size: 21px;
+      span.js {
+        font-size: 23px;
+      }
     }
+  }
+
+  span.js {
+    font-size: 26px;
+    margin-left: 0px;
   }
 `;
 
@@ -62,7 +70,9 @@ export const LIJSLogo: React.FC<Props> = ({ type }) => {
         <Img fixed={img} />
       </div>
 
-      <span>Long Island JavaScript Meetup</span>
+      <span>
+        Long Island <span className="js">JavaScript</span>
+      </span>
     </Wrapper>
   );
 };

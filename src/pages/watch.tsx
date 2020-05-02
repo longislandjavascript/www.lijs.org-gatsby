@@ -17,7 +17,7 @@ const WatchPage = () => {
     <Layout title="Watch Now" fullWidth={true}>
       <SEO
         title="Watch Now"
-        description="Watch the Long Island JavaScript Twitch stream now."
+        description="Watch the Long Island JavaScript Twitch stream."
       />
       <Show when={!isReady}>
         <SpinnerOverlay>

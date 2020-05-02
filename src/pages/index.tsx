@@ -42,6 +42,7 @@ export const query = graphql`
         description
         time
         utc_offset
+        yes_rsvp_count
         link
         venue {
           name

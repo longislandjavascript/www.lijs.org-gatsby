@@ -23,11 +23,13 @@ export const Event: React.FC<EventProps> = ({ data, isNextEvent }) => {
   return (
     <Card title={date} subTitle={data.venue.name}>
       <EventTitle> {data.name}</EventTitle>
+      {isNextEvent && (
+        <Attending>{data.yes_rsvp_count} people attending</Attending>
+      )}
 
       {viewDescription && (
         <div dangerouslySetInnerHTML={{ __html: data.description }} />
       )}
-
       <ButtonWrapper>
         <LinkButton href={data.link}>
           <FaMeetup size={20} style={{ marginRight: "5px" }} />
@@ -42,6 +44,17 @@ export const Event: React.FC<EventProps> = ({ data, isNextEvent }) => {
     </Card>
   );
 };
+
+const Attending = styled.p`
+  display: inline-block;
+  padding: 2px 10px;
+  background: ${p => p.theme.colors.blueDarkest};
+  border-radius: 20px;
+  margin: 15px 0px 0px 0px;
+  font-weight: 500;
+  font-size: 12px;
+  color: ${p => p.theme.colors.logoYellow};
+`;
 
 const EventTitle = styled.h2`
   color: ${p => p.theme.colors.logoYellow};

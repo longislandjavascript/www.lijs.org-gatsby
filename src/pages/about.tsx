@@ -18,7 +18,7 @@ const AboutPage: React.FC<Props> = ({ data }) => {
   return (
     <Layout title="About Us">
       <SEO
-        title="About Long Island JavaScript Meetup"
+        title="About Long Island JavaScript"
         description="Everything you want to know about the Long Island JavaScript Meetup."
       />
       <Card>
@@ -51,7 +51,7 @@ const AboutPage: React.FC<Props> = ({ data }) => {
 
 export const query = graphql`
   query MeetupGroup {
-    meetupGroup(name: { eq: "Long Island JavaScript Group" }) {
+    meetupGroup(name: { eq: "Long Island JavaScript" }) {
       members
       who
     }
