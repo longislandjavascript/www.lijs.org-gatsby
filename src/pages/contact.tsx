@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { navigate } from "gatsby-link";
+import Recaptcha from "react-google-recaptcha";
 import { AtomSpinner } from "react-epic-spinners";
 import styled from "styled-components";
 import { Layout } from "../components/layout";
@@ -14,6 +15,16 @@ const reasons = [
   ["other", "Something else."],
 ];
 
+const RECAPTCHA_KEY = process.env.GATSBY_APP_SITE_RECAPTCHA_KEY;
+if (typeof RECAPTCHA_KEY === "undefined") {
+  throw new Error(`
+  Env var GATSBY_APP_SITE_RECAPTCHA_KEY is undefined! 
+  You probably forget to set it in your Netlify build environment variables. 
+  Make sure to get a Recaptcha key at https://www.netlify.com/docs/form-handling/#custom-recaptcha-2-with-your-own-settings
+  Note this demo is specifically for Recaptcha v2
+  `);
+}
+
 function encode(data) {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
@@ -24,6 +35,7 @@ const ContactPage = () => {
   const [state, setState] = useState({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const recaptchaRef = useRef();
 
   function handleChange(e) {
     setState({ ...state, [e.target.name]: e.target.value });
@@ -34,11 +46,14 @@ const ContactPage = () => {
     setLoading(true);
     setError(false);
     const form = e.target;
+
+    const recaptchaValue = recaptchaRef.current;
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
         "form-name": form.getAttribute("name"),
+        "g-recaptcha-response": recaptchaValue,
         ...state,
       }),
     })
@@ -60,16 +75,13 @@ const ContactPage = () => {
         method="post"
         action="/thanks/"
         data-netlify="true"
-        data-netlify-honeypot="bot-field"
+        data-netlify-recaptcha="true"
         onSubmit={handleSubmit}
       >
         <input type="hidden" name="form-name" value="contact" />
-        <p className="hidden">
-          <label>
-            Don’t fill this out if you're human:{" "}
-            <input name="bot-field" onChange={handleChange} />
-          </label>
-        </p>
+        <noscript>
+          <p>This form won’t work with Javascript disabled</p>
+        </noscript>
         <select
           defaultValue="presenter"
           aria-label="Contact Reason Select Box"
@@ -111,6 +123,9 @@ const ContactPage = () => {
           required={true}
           aria-label="Your Message"
         />
+
+        <Recaptcha ref={recaptchaRef} sitekey={RECAPTCHA_KEY} />
+
         <Button type="submit">
           {loading ? (
             <AtomSpinner color="hsl(202, 100%, 20%)" size={30} />
