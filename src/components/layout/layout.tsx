@@ -1,3 +1,4 @@
+import "typeface-roboto";
 import { GlobalCss } from "../global-css";
 import React, { useState, useEffect, useMemo } from "react";
 import * as _ from "styled-components/cssprop";
@@ -5,14 +6,12 @@ import { ThemeProvider } from "styled-components";
 import { theme } from "../../theme";
 import { Header } from "./header";
 import { Sidebar } from "./sidebar";
-import { Main } from "../main";
+import { Main } from "./main";
 import { Show } from "../show";
 import { SkipLink } from "./skip-link";
 import { CrookedTitle } from "../crooked-title";
 import { useClickOutside } from "../../hooks/use-click-outside";
 import { useWindowSize } from "react-hooks-window-size";
-
-import "typeface-roboto";
 
 type Props = {
   title: string;
@@ -33,9 +32,7 @@ export const Layout: React.FC<Props> = ({ children, title, fullWidth }) => {
   useEffect(
     function toggleSidebarOnWidthChange() {
       setIsSidebarOpen(!isSmall);
-      setTimeout(() => {
-        setReady(true);
-      }, 500);
+      setReady(true);
     },
     [isSmall]
   );
@@ -59,7 +56,7 @@ export const Layout: React.FC<Props> = ({ children, title, fullWidth }) => {
         />
       </Show>
 
-      <Sidebar forwardRef={ref} isOpen={isSidebarOpen}  />
+      <Sidebar forwardRef={ref} isOpen={isSidebarOpen} />
 
       <Main fullWidth={fullWidth} id="main-content">
         <Show when={ready}>

@@ -16,9 +16,10 @@ import { DDDIcon } from "../components/layout/ddd-icon";
 
 export const links = [
   ["Next Event", "/", FaCalendarDay],
+  ["About Us", "/about", FaUsers],
   ["Watch Now", "/watch", FaDesktop],
   ["Past Events", "/past-events", FaHistory],
-  ["About Us", "/about", FaUsers],
+
   ["Contact Us", "/contact", FaRegEnvelope],
   ["FAQ", "/faq", FaQuestionCircle],
   ["Code of Conduct", "/code-of-conduct", FaScroll],

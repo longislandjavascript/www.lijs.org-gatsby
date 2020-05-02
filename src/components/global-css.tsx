@@ -11,7 +11,6 @@ html {
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
-  font-family: "Roboto", Helvetica, Arial, Sans-Serif;
   -moz-osx-font-smoothing: grayscale;
   background-color: hsl(202, 100%, 15%);
   word-wrap: break-word;
