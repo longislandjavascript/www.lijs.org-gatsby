@@ -1,3 +1,4 @@
+import { GlobalCss } from "./global-css";
 import React, { useState, useEffect, useMemo } from "react";
 import styled from "styled-components";
 import * as _ from "styled-components/cssprop";
@@ -11,7 +12,6 @@ import { SkipLink } from "./skip-link";
 import { CrookedTitle } from "./crooked-title";
 import { useClickOutside } from "../hooks/use-click-outside";
 import { useWindowSize } from "react-hooks-window-size";
-import { GlobalCss } from "./global-css";
 
 import "typeface-roboto";
 
