@@ -1,24 +1,22 @@
 import React from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import styled from "styled-components";
-import { LIJSLogo } from "./lijs-logo";
-import { Link } from "./link";
-import { Show } from "./show";
-import { links } from "../data/sidebar-links";
+import { LIJSLogo } from "../lijs-logo";
+import { Link } from "../link";
+import { Show } from "../show";
+import { links } from "../../data/sidebar-links";
 
 export type SidebarProps = {
   forwardRef: any;
   isOpen: boolean;
-  isReady: boolean;
 };
 
 export const SidebarComponent: React.FC<SidebarProps> = ({
   forwardRef,
   isOpen,
-  isReady,
 }) => {
   return (
-    <StyledAside ref={forwardRef} isReady={isReady}>
+    <StyledAside ref={forwardRef}>
       <ul>
         <li className="logo">
           <LIJSLogo type="sidebar" />
@@ -70,7 +68,7 @@ const SidebarLink = styled(Link)`
   }
 `;
 
-const StyledAside = styled.aside<{ isReady: boolean }>`
+const StyledAside = styled.aside`
   width: ${p => p.theme.sidebarWidth}px;
   overflow: scroll;
   padding: 10px;
@@ -79,27 +77,24 @@ const StyledAside = styled.aside<{ isReady: boolean }>`
   top: 0;
   bottom: 0;
   left: ${p => (p.theme.isSidebarOpen ? 0 : "-100%")};
-  transition: top 300ms ease-in-out, left 300ms ease-in-out;
-  z-index: 9999;
-  visibility: ${p => (p.isReady ? "visible" : "hidden")};
+  transition: top 250ms ease-out, left 250ms ease-out;
+  z-index: 2;
 
   .logo {
     display: block;
   }
 
   ${p => p.theme.small} {
-    
     padding: 10px 10px 30px 10px;
-    /* top: ${p => p.theme.headerHeight}px; */
     left: 0;
     bottom: 0;
     right: 0;
     width: 100%;
     top: ${p => (p.theme.isSidebarOpen ? `${p.theme.headerHeight}px` : "110%")};
+    box-shadow: 4px 0 8px -2px rgba(255, 255, 255, 0.2);
     .logo {
       display: none;
     }
-    box-shadow: 4px 0 8px -2px rgba(255, 255, 255, 0.2);
   }
 
   ul {

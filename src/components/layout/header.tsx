@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { LIJSLogo } from "./lijs-logo";
+import { LIJSLogo } from "../lijs-logo";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const StyledHeader = styled.header`
@@ -15,7 +15,7 @@ const StyledHeader = styled.header`
   justify-content: space-between;
   padding: 4px;
   padding-right: 10px;
-  z-index: 9999;
+  z-index: 2;
   box-shadow: 0px 3px 8px -2px rgba(255, 255, 255, 0.2);
 `;
 

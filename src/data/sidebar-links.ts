@@ -12,7 +12,7 @@ import {
   FaHistory,
 } from "react-icons/fa";
 import { BsClockHistory } from "react-icons/bs";
-import { DDDIcon } from "../components/ddd-icon";
+import { DDDIcon } from "../components/layout/ddd-icon";
 
 export const links = [
   ["Next Event", "/", FaCalendarDay],

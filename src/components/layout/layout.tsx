@@ -1,16 +1,15 @@
-import { GlobalCss } from "./global-css";
+import { GlobalCss } from "../global-css";
 import React, { useState, useEffect, useMemo } from "react";
-import styled from "styled-components";
 import * as _ from "styled-components/cssprop";
 import { ThemeProvider } from "styled-components";
-import { theme } from "../theme";
+import { theme } from "../../theme";
 import { Header } from "./header";
 import { Sidebar } from "./sidebar";
-import { Main } from "./main";
-import { Show } from "./show";
+import { Main } from "../main";
+import { Show } from "../show";
 import { SkipLink } from "./skip-link";
-import { CrookedTitle } from "./crooked-title";
-import { useClickOutside } from "../hooks/use-click-outside";
+import { CrookedTitle } from "../crooked-title";
+import { useClickOutside } from "../../hooks/use-click-outside";
 import { useWindowSize } from "react-hooks-window-size";
 
 import "typeface-roboto";
@@ -60,7 +59,7 @@ export const Layout: React.FC<Props> = ({ children, title, fullWidth }) => {
         />
       </Show>
 
-      <Sidebar forwardRef={ref} isOpen={isSidebarOpen} isReady={ready} />
+      <Sidebar forwardRef={ref} isOpen={isSidebarOpen}  />
 
       <Main fullWidth={fullWidth} id="main-content">
         <Show when={ready}>

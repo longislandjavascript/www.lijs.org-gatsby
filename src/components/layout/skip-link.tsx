@@ -7,7 +7,7 @@ export const SkipLink = styled.a`
   background: ${p => p.theme.colors.blueDarkest};
   color: ${p => p.theme.colors.textLight};
   padding: 4px;
-  z-index: 99999;
+  z-index: 3;
   transition: top 200ms, left 200ms;
   padding: 4px;
   border-radius: 4px;
