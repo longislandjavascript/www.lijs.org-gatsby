@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import styled from "styled-components";
 import { LIJSLogo } from "./lijs-logo";
@@ -70,7 +70,7 @@ const SidebarLink = styled(Link)`
 const StyledAside = styled.aside`
   width: ${p => p.theme.sidebarWidth}px;
   overflow: scroll;
-  padding: 10px 10px 50px 10px;
+  padding: 10px;
   background: ${p => p.theme.colors.blueDark};
   position: fixed;
   top: 0;
@@ -84,6 +84,7 @@ const StyledAside = styled.aside`
   }
 
   ${p => p.theme.small} {
+    padding: 10px 10px 30px 10px;
     top: ${p => p.theme.headerHeight}px;
     .logo {
       display: none;
