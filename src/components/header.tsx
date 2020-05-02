@@ -13,8 +13,10 @@ const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 4px;
   padding-right: 10px;
   z-index: 9999;
+  box-shadow: 0px 3px 8px -2px rgba(255, 255, 255, 0.2);
 `;
 
 type Props = {

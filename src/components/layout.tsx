@@ -60,7 +60,7 @@ export const Layout: React.FC<Props> = ({ children, title, fullWidth }) => {
 
       <Sidebar forwardRef={ref} isOpen={isSidebarOpen} />
 
-      {isSidebarOpen && <Overlay />}
+      {isSidebarOpen && isSmall && <Overlay />}
 
       <Main fullWidth={fullWidth} id="main-content">
         <Show when={ready}>
@@ -78,7 +78,7 @@ const Overlay = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(255, 255, 255, 0.2);
   z-index: 999;
   overflow: hidden;
 `;
