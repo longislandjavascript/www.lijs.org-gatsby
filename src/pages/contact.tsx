@@ -124,7 +124,11 @@ const ContactPage = () => {
           aria-label="Your Message"
         />
 
-        <Recaptcha ref={recaptchaRef} sitekey={RECAPTCHA_KEY} />
+        <Recaptcha
+          ref={recaptchaRef}
+          sitekey={RECAPTCHA_KEY}
+          size="invisible"
+        />
 
         <Button type="submit">
           {loading ? (
