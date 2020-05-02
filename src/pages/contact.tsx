@@ -38,7 +38,7 @@ const ContactPage = () => {
   const recaptchaRef = useRef();
 
   function handleChange(e) {
-    setState({ ...state, [e.target.name]: e.target.value });
+    setState(prevState => ({ ...prevState, [e.target.name]: e.target.value }));
   }
 
   function handleSubmit(e) {
@@ -46,8 +46,8 @@ const ContactPage = () => {
     setLoading(true);
     setError(false);
     const form = e.target;
-
-    const recaptchaValue = recaptchaRef.current;
+    // @ts-ignore
+    const recaptchaValue = recaptchaRef.current.getValue();
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -78,7 +78,7 @@ const ContactPage = () => {
         data-netlify-recaptcha="true"
         onSubmit={handleSubmit}
       >
-        <input type="hidden" name="form-name" value="contact" />
+        {/* <input type="hidden" name="form-name" value="contact" /> */}
         <noscript>
           <p>This form won’t work with Javascript disabled</p>
         </noscript>
