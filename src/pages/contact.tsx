@@ -15,6 +15,8 @@ const reasons = [
   ["other", "Something else."],
 ];
 
+const isProd = process.env.NODE_ENV !== "development";
+
 const RECAPTCHA_KEY = process.env.GATSBY_APP_SITE_RECAPTCHA_KEY;
 if (typeof RECAPTCHA_KEY === "undefined") {
   throw new Error(`
@@ -43,9 +45,10 @@ const ContactPage = () => {
   const recaptchaRef = useRef();
 
   function handleChange(e) {
+    e.persist();
     setState(prevState => ({
       ...prevState,
-      [e.currentTarget.name]: e.currentTarget.value,
+      [e.target.name]: e.target.value,
     }));
   }
 
@@ -132,11 +135,13 @@ const ContactPage = () => {
           aria-label="Your Message"
         />
 
-        <Recaptcha
-          ref={recaptchaRef}
-          sitekey={RECAPTCHA_KEY}
-          size="invisible"
-        />
+        {isProd && (
+          <Recaptcha
+            ref={recaptchaRef}
+            sitekey={RECAPTCHA_KEY}
+            size="invisible"
+          />
+        )}
 
         <Button type="submit">
           {loading ? (
