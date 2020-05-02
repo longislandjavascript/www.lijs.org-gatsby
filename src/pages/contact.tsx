@@ -58,7 +58,7 @@ const ContactPage = () => {
     setError(false);
     const form = e.target;
     // @ts-ignore
-    const recaptchaValue = recaptchaRef.current.getValue();
+    const recaptchaValue = isProd ? recaptchaRef.current.getValue() : null;
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -89,10 +89,8 @@ const ContactPage = () => {
         data-netlify-recaptcha="true"
         onSubmit={handleSubmit}
       >
-        {/* <input type="hidden" name="form-name" value="contact" /> */}
-        <noscript>
-          <p>This form won’t work with Javascript disabled</p>
-        </noscript>
+        <input type="hidden" name="form-name" value="contact" />
+
         <select
           defaultValue="presenter"
           aria-label="Contact Reason Select Box"
