@@ -43,9 +43,13 @@ p span {
 
 p,
 a,
+q,
 button,
 h1,
 h2,
+small,
+blockquote,
+cite,
 h3 {
   color: #e6e6e6;
 }

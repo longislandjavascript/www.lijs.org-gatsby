@@ -6,6 +6,7 @@ import { MeetupGroup } from "../types";
 import { Card } from "../components/card";
 import { Organizers } from "../components/organizers";
 import { Sponsors } from "../components/sponsors";
+import { Reviews } from "../components/reviews";
 import { LocationMap } from "../components/location-map";
 import { AlertBox } from "../components/alert-box";
 
@@ -32,6 +33,7 @@ const AboutPage: React.FC<Props> = ({ data }) => {
           of topics around the <span>JavaScript ecosystem</span>.
         </p>
       </Card>
+      <Reviews />
 
       <Organizers />
 
