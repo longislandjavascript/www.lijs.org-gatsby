@@ -58,7 +58,9 @@ export const Layout: React.FC<Props> = ({ children, title, fullWidth }) => {
         />
       </Show>
 
-      <Sidebar forwardRef={ref} isOpen={isSidebarOpen} />
+      <Show when={ready}>
+        <Sidebar forwardRef={ref} isOpen={isSidebarOpen} />
+      </Show>
 
       <Main fullWidth={fullWidth} id="main-content">
         <Show when={ready}>
