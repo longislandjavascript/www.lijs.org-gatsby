@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { Card } from "./card";
+import { Card } from "../card";
 
 export const reviewsData = [
   [

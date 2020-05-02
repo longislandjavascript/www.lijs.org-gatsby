@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { Card } from "./card";
+import { Card } from "../card";
 import { OrganizerImage } from "./organizer-image";
-import { Link } from "./link";
+import { Link } from "../link";
 
 const organizers = [
   {

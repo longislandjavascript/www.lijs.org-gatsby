@@ -9,14 +9,16 @@ import { links } from "../data/sidebar-links";
 export type SidebarProps = {
   forwardRef: any;
   isOpen: boolean;
+  isReady: boolean;
 };
 
 export const SidebarComponent: React.FC<SidebarProps> = ({
   forwardRef,
   isOpen,
+  isReady,
 }) => {
   return (
-    <StyledAside ref={forwardRef}>
+    <StyledAside ref={forwardRef} isReady={isReady}>
       <ul>
         <li className="logo">
           <LIJSLogo type="sidebar" />
@@ -68,7 +70,7 @@ const SidebarLink = styled(Link)`
   }
 `;
 
-const StyledAside = styled.aside`
+const StyledAside = styled.aside<{ isReady: boolean }>`
   width: ${p => p.theme.sidebarWidth}px;
   overflow: scroll;
   padding: 10px;
@@ -79,6 +81,7 @@ const StyledAside = styled.aside`
   left: ${p => (p.theme.isSidebarOpen ? 0 : "-100%")};
   transition: top 300ms ease-in-out, left 300ms ease-in-out;
   z-index: 9999;
+  visibility: ${p => (p.isReady ? "visible" : "hidden")};
 
   .logo {
     display: block;

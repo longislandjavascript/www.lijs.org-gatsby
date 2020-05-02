@@ -34,7 +34,9 @@ export const Layout: React.FC<Props> = ({ children, title, fullWidth }) => {
   useEffect(
     function toggleSidebarOnWidthChange() {
       setIsSidebarOpen(!isSmall);
-      setReady(true);
+      setTimeout(() => {
+        setReady(true);
+      }, 500);
     },
     [isSmall]
   );
@@ -58,9 +60,7 @@ export const Layout: React.FC<Props> = ({ children, title, fullWidth }) => {
         />
       </Show>
 
-      <Show when={ready}>
-        <Sidebar forwardRef={ref} isOpen={isSidebarOpen} />
-      </Show>
+      <Sidebar forwardRef={ref} isOpen={isSidebarOpen} isReady={ready} />
 
       <Main fullWidth={fullWidth} id="main-content">
         <Show when={ready}>

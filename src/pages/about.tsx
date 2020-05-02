@@ -1,14 +1,17 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { MeetupGroup } from "../types";
+
+// Components
 import { Layout } from "../components/layout";
 import { SEO } from "../components/seo";
-import { MeetupGroup } from "../types";
-import { Card } from "../components/card";
-import { Organizers } from "../components/organizers";
-import { Sponsors } from "../components/sponsors";
-import { Reviews } from "../components/reviews";
-import { LocationMap } from "../components/location-map";
-import { AlertBox } from "../components/alert-box";
+import {
+  About,
+  Reviews,
+  Organizers,
+  Location,
+  Sponsors,
+} from "../components/about";
 
 interface Props {
   data: {
@@ -22,31 +25,11 @@ const AboutPage: React.FC<Props> = ({ data }) => {
         title="About Long Island JavaScript"
         description="Everything you want to know about the Long Island JavaScript Meetup."
       />
-      <Card>
-        <p>
-          <span>Long Island JavaScript</span> is a group of{" "}
-          <span>
-            {data.meetupGroup.members} {data.meetupGroup.who}
-          </span>{" "}
-          in the Long Island, NY area. We meet on the{" "}
-          <span>last Wednesday of each month</span> , where we discuss a range
-          of topics around the <span>JavaScript ecosystem</span>.
-        </p>
-      </Card>
+      <About count={data.meetupGroup.members} name={data.meetupGroup.who} />
       <Reviews />
-
       <Organizers />
-
       <Sponsors />
-
-      <Card title="Location">
-        <br />
-        <AlertBox>
-          Due to CoronaVirus, we are meeting virtually until further notice.
-        </AlertBox>
-        <br />
-        <LocationMap />
-      </Card>
+      <Location />
     </Layout>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Card } from "./card";
-import { Link } from "./link";
+import { Card } from "../card";
+import { Link } from "../link";
 import { SponsorImage } from "./sponsor-image";
 
 const sponsorsData = [
