@@ -889,7 +889,7 @@
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.1.2", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
+"@babel/runtime@^7.1.2", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
   version "7.9.6"
   resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.9.6.tgz#a9102eb5cadedf3f31d08a9ecf294af7827ea29f"
   integrity sha512-64AF1xY3OAkFHqOb9s4jpgk1Mm5vDZ4L3acHvAml+53nO1XbXLuDodsVpO4OIUsmemlUHMxNdYMNJmsvOwLrvQ==
@@ -1596,6 +1596,13 @@
   version "0.62.5"
   resolved "https://registry.npmjs.org/@types/react-native/-/react-native-0.62.5.tgz#605c2d31485c515ee18b62e8b29ffdbba404a443"
   integrity sha512-x6ZBbo752yAw5XUarOyh53oNgMuafL4EhWEbd4ARSMK6Y7nTRm2a1tBHy8Fp7h7ji0XXJrxNRTXGJRRP3+MWzg==
+  dependencies:
+    "@types/react" "*"
+
+"@types/react-transition-group@^4.2.4":
+  version "4.2.4"
+  resolved "https://registry.npmjs.org/@types/react-transition-group/-/react-transition-group-4.2.4.tgz#c7416225987ccdb719262766c1483da8f826838d"
+  integrity sha512-8DMUaDqh0S70TjkqU0DxOu80tFUiiaS9rxkWip/nb7gtvAsbqOXm02UCmR8zdcjWujgeYPiPNTVpVpKzUDotwA==
   dependencies:
     "@types/react" "*"
 
@@ -3981,7 +3988,7 @@ csso@^4.0.2:
   dependencies:
     css-tree "1.0.0-alpha.39"
 
-csstype@^2.2.0:
+csstype@^2.2.0, csstype@^2.6.7:
   version "2.6.10"
   resolved "https://registry.npmjs.org/csstype/-/csstype-2.6.10.tgz#e63af50e66d7c266edb6b32909cfd0aabe03928b"
   integrity sha512-D34BqZU4cIlMCY93rZHbrq9pjTAQJ3U8S8rfBqjwHxkGPThWFjzZDQpgMJY0QViLxth6ZKYiwFBo14RdN44U/w==
@@ -4425,6 +4432,14 @@ dom-helpers@^3.4.0:
   integrity sha512-LnuPJ+dwqKDIyotW1VzmOZ5TONUN7CwkCR5hrgawTUbkBGYdeoNLZo6nNfGkCrjtE1nXXaj7iMMpDa8/d9WoIA==
   dependencies:
     "@babel/runtime" "^7.1.2"
+
+dom-helpers@^5.0.1:
+  version "5.1.4"
+  resolved "https://registry.npmjs.org/dom-helpers/-/dom-helpers-5.1.4.tgz#4609680ab5c79a45f2531441f1949b79d6587f4b"
+  integrity sha512-TjMyeVUvNEnOnhzs6uAn9Ya47GmMo3qq7m+Lr/3ON0Rs5kHvb8I+SQYjLUSYn7qhEm0QjW0yrBkvz9yOrwwz1A==
+  dependencies:
+    "@babel/runtime" "^7.8.7"
+    csstype "^2.6.7"
 
 dom-serializer@0:
   version "0.2.2"
@@ -5713,10 +5728,10 @@ functional-red-black-tree@^1.0.1:
   resolved "https://registry.npmjs.org/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
   integrity sha1-GwqzvVU7Kg1jmdKcDj6gslIHgyc=
 
-gatsby-cli@^2.12.7:
-  version "2.12.7"
-  resolved "https://registry.npmjs.org/gatsby-cli/-/gatsby-cli-2.12.7.tgz#4b935e0f10328b4c5e55aa6ccedbeb04a00ea95c"
-  integrity sha512-FxvvV0ITo+hb8pFWHfwIaPugYQR0i4VRH22srLstJtTUZlnlT0YzLLUi+xCOc5Yo/bsLbR3W+4KLtiNC5BoAOQ==
+gatsby-cli@^2.12.8:
+  version "2.12.8"
+  resolved "https://registry.npmjs.org/gatsby-cli/-/gatsby-cli-2.12.8.tgz#a4873dd898246a36418e11cff16f89f4c0d9ae42"
+  integrity sha512-f3wrk1twDVtY0UtyTb7W6ad3Sfj7JtCi+GxOm4MMNj/9Wsa78q10w7fsZ3+Eo+zUr6JiqAH3cYvhv03l0DfcAA==
   dependencies:
     "@babel/code-frame" "^7.8.3"
     "@babel/runtime" "^7.9.2"
@@ -5734,7 +5749,7 @@ gatsby-cli@^2.12.7:
     fs-exists-cached "^1.0.0"
     fs-extra "^8.1.0"
     gatsby-core-utils "^1.2.0"
-    gatsby-recipes "^0.1.8"
+    gatsby-recipes "^0.1.9"
     gatsby-telemetry "^1.3.1"
     hosted-git-info "^3.0.4"
     is-valid-path "^0.1.1"
@@ -5920,10 +5935,10 @@ gatsby-react-router-scroll@^2.3.0:
     scroll-behavior "^0.9.12"
     warning "^3.0.0"
 
-gatsby-recipes@^0.1.8:
-  version "0.1.8"
-  resolved "https://registry.npmjs.org/gatsby-recipes/-/gatsby-recipes-0.1.8.tgz#cf49937118b8b48ea71df8ed1846c243c0201315"
-  integrity sha512-tpt7mzAWxyOAHxNQRh0ocrDjiRTqYNuzTBUCT24np9FFFpJO+5JMuhESC8W6BI+UyrCiYwwAu8TGfhWGCbDyOQ==
+gatsby-recipes@^0.1.9:
+  version "0.1.9"
+  resolved "https://registry.npmjs.org/gatsby-recipes/-/gatsby-recipes-0.1.9.tgz#fb6be9f7ab1116413042c72f42882a674e5e4b49"
+  integrity sha512-dO7VNa8QfvIMqBQtMF4Io2dvtxBk6HNCrJvG33VOeo7E4GijVVOMYif0ZZq/YpYoBMOJTApuntXVMs8SO9/lJQ==
   dependencies:
     "@babel/core" "^7.9.0"
     "@babel/generator" "^7.9.5"
@@ -6053,10 +6068,10 @@ gatsby-transformer-sharp@^2.5.0:
     semver "^5.7.1"
     sharp "^0.25.1"
 
-gatsby@^2.21.9:
-  version "2.21.9"
-  resolved "https://registry.npmjs.org/gatsby/-/gatsby-2.21.9.tgz#092d5fe9648bc24e2a2891e5bd61a50eb0a6c43e"
-  integrity sha512-pvMJQqt2AsJYdNRe9KJjenJc5m0rhrleApqMRiKT5RBYWOGuGMh9Y7xZ0R20FoJPs6SIKErJAZ6DVTkD4WaE3w==
+gatsby@^2.21.11:
+  version "2.21.11"
+  resolved "https://registry.npmjs.org/gatsby/-/gatsby-2.21.11.tgz#4523c1a44034210f18960a69d9a4bc1218e2e7e1"
+  integrity sha512-TODjPFbcFksvIrrR3NmkDlJ3PjmFxj3ZkxaF/Z6nbCNssgQFFtz04QSLgPXE8cN57Nu3Y6KMeJWPNWYyazRvBw==
   dependencies:
     "@babel/code-frame" "^7.8.3"
     "@babel/core" "^7.9.0"
@@ -6119,7 +6134,7 @@ gatsby@^2.21.9:
     flat "^4.1.0"
     fs-exists-cached "1.0.0"
     fs-extra "^8.1.0"
-    gatsby-cli "^2.12.7"
+    gatsby-cli "^2.12.8"
     gatsby-core-utils "^1.2.0"
     gatsby-graphiql-explorer "^0.4.0"
     gatsby-link "^2.4.0"
@@ -10812,7 +10827,7 @@ react-google-recaptcha@^2.0.1:
     prop-types "^15.5.0"
     react-async-script "^1.1.1"
 
-react-helmet-async@^1.0.5:
+react-helmet-async@^1.0.6:
   version "1.0.6"
   resolved "https://registry.npmjs.org/react-helmet-async/-/react-helmet-async-1.0.6.tgz#11c15c74e79b3f66670c73779bef3e0e352b1d4e"
   integrity sha512-t+bhAI4NgxfEv8ez4r77cLfR4O4Z55E/FH2DT+uiE4U7yfWgAk7OAOi7IxHxuYEVLI26bqjZvlVCkpC5/5AoNA==
@@ -10886,6 +10901,16 @@ react-refresh@^0.7.0:
   version "0.7.2"
   resolved "https://registry.npmjs.org/react-refresh/-/react-refresh-0.7.2.tgz#f30978d21eb8cac6e2f2fde056a7d04f6844dd50"
   integrity sha512-u5l7fhAJXecWUJzVxzMRU2Zvw8m4QmDNHlTrT5uo3KBlYBhmChd7syAakBoay1yIiVhx/8Fi7a6v6kQZfsw81Q==
+
+react-transition-group@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.npmjs.org/react-transition-group/-/react-transition-group-4.3.0.tgz#fea832e386cf8796c58b61874a3319704f5ce683"
+  integrity sha512-1qRV1ZuVSdxPlPf4O8t7inxUGpdyO5zG9IoNfJxSO0ImU2A1YWkEQvFPuIPZmMLkg5hYs7vv5mMOyfgSkvAwvw==
+  dependencies:
+    "@babel/runtime" "^7.5.5"
+    dom-helpers "^5.0.1"
+    loose-envify "^1.4.0"
+    prop-types "^15.6.2"
 
 react@>=0.14.x, react@^16.13.1, react@^16.8.0:
   version "16.13.1"

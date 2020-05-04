@@ -10,6 +10,7 @@ export const CrookedTitle: React.FC<Props> = ({ as = "h1", children }) => {
     display: inline-block;
     color: ${p => p.theme.colors.textDark};
     padding: 0.4em;
+    font-size: ${as === "h1" ? "1.6rem" : "1.2rem"};
     background: ${p => p.theme.colors.logoYellow};
     transform: rotate(-4deg);
     margin: 10px 0px 20px 0px;

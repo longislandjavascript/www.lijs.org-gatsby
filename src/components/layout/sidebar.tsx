@@ -98,7 +98,12 @@ const StyledAside = styled.aside`
   }
 
   ul {
+    margin: 0;
     margin-top: 10px;
+    padding: 0;
+    list-style-position: outside;
+    list-style-image: none;
+    list-style-type: none;
   }
 
   li {

@@ -9,6 +9,7 @@ const baseStyles = css`
   text-decoration: none;
   cursor: pointer;
   outline: none;
+  color: ${p => p.theme.colors.textLight};
   transition: background-color 300ms;
   &:hover,
   &:focus {

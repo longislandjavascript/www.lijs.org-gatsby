@@ -15,8 +15,6 @@ const reasons = [
   ["other", "Something else."],
 ];
 
-const isProd = process.env.NODE_ENV !== "development";
-
 const RECAPTCHA_KEY = process.env.GATSBY_APP_SITE_RECAPTCHA_KEY;
 if (typeof RECAPTCHA_KEY === "undefined") {
   throw new Error(`
@@ -58,7 +56,7 @@ const ContactPage = () => {
     setError(false);
     const form = e.target;
     // @ts-ignore
-    const recaptchaValue = isProd ? recaptchaRef.current.getValue() : null;
+    const recaptchaValue = recaptchaRef.current.getValue();
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -133,13 +131,11 @@ const ContactPage = () => {
           aria-label="Your Message"
         />
 
-        {isProd && (
-          <Recaptcha
-            ref={recaptchaRef}
-            sitekey={RECAPTCHA_KEY}
-            size="invisible"
-          />
-        )}
+        <Recaptcha
+          ref={recaptchaRef}
+          sitekey={RECAPTCHA_KEY}
+          size="invisible"
+        />
 
         <Button type="submit">
           {loading ? (

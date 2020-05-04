@@ -1,16 +1,6 @@
 import React, { useState, useEffect } from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { Card } from "../card";
-
-const fade = keyframes`
-0% {
-  opacity: 0;
-}
-
-100% {
-  opacity: 1
-}
-`;
 
 export const reviewsData = [
   [
@@ -65,7 +55,6 @@ const Wrapper = styled.div`
   min-height: 110px;
   border-left: 3px solid ${p => p.theme.colors.blueDarkest};
   padding: 8px;
-  animation: ${fade} 500ms;
 
   q {
     font-size: 20px;

@@ -1,4 +1,3 @@
-import "typeface-roboto";
 import { GlobalCss } from "../global-css";
 import React, { useState, useEffect, useMemo } from "react";
 import * as _ from "styled-components/cssprop";
