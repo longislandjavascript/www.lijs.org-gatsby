@@ -54,6 +54,7 @@ const StyledMenuItemButton = styled.button`
   border: none;
   cursor: pointer;
   transition: background-color 300ms;
+  color: ${p => p.theme.colors.textLight};
   outline: none;
   &:hover,
   &:focus {

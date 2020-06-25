@@ -10,7 +10,6 @@ const StyledMain = styled.main`
   transition: left 300ms, top 300ms;
   min-height: 100vh;
   padding: 30px 5%;
-
   ${p => p.theme.small} {
     top: ${p => p.theme.headerHeight}px;
     left: 0;

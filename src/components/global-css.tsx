@@ -13,6 +13,10 @@ body {
   color: #e6e6e6;
 }
 
+a {
+  color: ${p => p.theme.colors.textLight};
+}
+
 p {
   font-size: 1.1rem;
   line-height: 1.5;
@@ -44,6 +48,10 @@ img {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
+}
+
+ul {
+  list-style-type: none;
 }
 
 `;
