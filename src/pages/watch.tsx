@@ -21,7 +21,7 @@ const WatchPage = () => {
       />
       <Show when={!isReady}>
         <SpinnerOverlay>
-          <AtomSpinner color="hsl(202, 100%, 20%)" size={200} />
+          <AtomSpinner color="hsl(210, 100%, 20%)" size={200} />
         </SpinnerOverlay>
       </Show>
 

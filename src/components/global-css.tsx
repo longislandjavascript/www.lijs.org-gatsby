@@ -9,7 +9,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: hsl(202, 100%, 15%);
+  background-color: hsl(210, 100%, 15%);
   color: #e6e6e6;
 }
 

@@ -139,7 +139,7 @@ const ContactPage = () => {
 
         <Button type="submit">
           {loading ? (
-            <AtomSpinner color="hsl(202, 100%, 20%)" size={30} />
+            <AtomSpinner color="hsl(210, 100%, 20%)" size={30} />
           ) : (
             "Submit"
           )}
