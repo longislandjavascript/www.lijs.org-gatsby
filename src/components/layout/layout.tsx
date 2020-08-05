@@ -57,12 +57,14 @@ export const Layout: React.FC<Props> = ({ children, title, fullWidth }) => {
 
       <Sidebar forwardRef={ref} isOpen={isSidebarOpen} />
 
-      <Main fullWidth={fullWidth} id="main-content">
-        <Show when={ready}>
-          <CrookedTitle>{title}</CrookedTitle>
-          <div style={{ marginTop: "25px" }}>{children}</div>
-        </Show>
-      </Main>
+      <div style={{ display: isSmall && isSidebarOpen ? "none" : "block" }}>
+        <Main fullWidth={fullWidth} id="main-content">
+          <Show when={ready}>
+            <CrookedTitle>{title}</CrookedTitle>
+            <div style={{ marginTop: "25px" }}>{children}</div>
+          </Show>
+        </Main>
+      </div>
     </ThemeProvider>
   );
 };
