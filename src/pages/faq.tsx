@@ -12,7 +12,7 @@ const Question = styled.p`
 `;
 
 const Answer = styled.p`
-  border-bottom: 1px solid ${p => p.theme.colors.blueDark};
+  border-bottom: 2px solid ${p => p.theme.colors.blueDark};
   padding-bottom: 20px;
   margin-bottom: 20px;
 `;

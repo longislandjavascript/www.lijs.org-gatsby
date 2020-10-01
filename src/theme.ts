@@ -3,7 +3,7 @@ export const theme = {
     logoBlue: "hsla(216, 90%, 52%, 1)",
     logoPurple: "hsla(270, 90%, 54%, 1)",
     logoYellow: "hsla(51, 99%, 45%, 1)",
-    blueDark: "hsl(210, 100%, 20%)",
+    blueDark: "hsl(210, 100%, 12%)",
     blueDarkest: "hsl(210, 100%, 15%)",
     textDark: "#333",
     textLight: "#f8f8f8",

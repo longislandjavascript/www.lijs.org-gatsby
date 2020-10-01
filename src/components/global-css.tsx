@@ -5,6 +5,9 @@ html {
   font-family: "Roboto", Helvetica, Arial, Sans-Serif;
   word-wrap: break-word;
 }
+* {
+  font-family: "Roboto", Helvetica, Arial, Sans-Serif;
+}
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;

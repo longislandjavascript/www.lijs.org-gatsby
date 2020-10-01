@@ -48,12 +48,12 @@ export const Event: React.FC<EventProps> = ({ data, isNextEvent }) => {
 const Attending = styled.p`
   display: inline-block;
   padding: 2px 10px;
-  background: ${p => p.theme.colors.blueDarkest};
+  background: ${p => p.theme.colors.logoYellow};
   border-radius: 20px;
   margin: 15px 0px 0px 0px;
   font-weight: 500;
   font-size: 12px;
-  color: ${p => p.theme.colors.logoYellow};
+  color: black;
 `;
 
 const EventTitle = styled.h2`
