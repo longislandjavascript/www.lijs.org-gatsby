@@ -8,7 +8,7 @@ import { SEO } from "../components/seo";
 import { Button } from "../components/button";
 
 const reasons = [
-  ["question", "I have a question or suggestion."],
+  ["question", "I have a question/suggestion."],
   ["presenter", "I'd like to propose a talk."],
   ["job", "I'm looking to hire a developer."],
   ["sponsor", "I'd like to sponsor the group."],
