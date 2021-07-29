@@ -6,16 +6,15 @@ export const faqs: FAQ[] = [
   {
     question: "Are you still holding events amidst the CoronaVirus outbreak?",
     answer:
-      "Yes, virtually. We are not meeting in person until further notice.",
+      "Yes, but just virtually. We are not meeting in person until further notice.",
   },
   {
     question: "When do you meet?",
-    answer:
-      "We meet on the last Wednesday of every month in Huntington, NY at LaunchPad Huntington.",
+    answer: "We meet on the last Wednesday of every month.",
   },
   {
     question: "Does it cost to attend an LIJS Meetup?",
-    answer: "Nope. All of our events are completely free to attend.",
+    answer: "Nope. All of our events are completely free.",
   },
   {
     question: "Do I need to know JavaScript?",
@@ -24,9 +23,9 @@ export const faqs: FAQ[] = [
   },
 
   {
-    question: "Can I show up if I did not RSVP?",
+    question: "Can I attend an event if I did not RSVP?",
     answer:
-      "Absolutely! While we do prefer that you RSVP, this is not a requirement.",
+      "Of course! While we do prefer that you RSVP, this is not a requirement.",
   },
   {
     question: "Do I need to bring a computer?",
@@ -48,8 +47,4 @@ export const faqs: FAQ[] = [
     answer:
       "Absolutely! We do not charge for events, so sponsorships help to cover some of our operating costs and to provide food, beverages, and giveaways to our group. Please contact us and we will get in tough with you soon.",
   },
-  // {
-  //   question: "Are your events streamed or posted online?",
-  //   answer: "Not yet, but this is high on our priority list.",
-  // },
 ];
