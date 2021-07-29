@@ -36,6 +36,7 @@
     "@types/styled-components": "^5.1.11",
     "prettier": "2.3.2"
   },
+  "engine": { "node": ">=12.13.0"},
   "keywords": [
     "long island",
     "javascript",
